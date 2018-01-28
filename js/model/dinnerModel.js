@@ -1,47 +1,82 @@
-//DinnerModel Object constructor
+//Returns //DinnerModel Object constructor
 var DinnerModel = function() {
- 
+
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
-
+	var numberOfGuests = document.getElementById("people-input-field");
+	var menu = [];
 
 	this.setNumberOfGuests = function(num) {
-		//TODO Lab 1
-	}
-	
-	this.getNumberOfGuests = function() {
-		//TODO Lab 1
+	    numberOfGuests.value = num;
 	}
 
-	//Returns the dish that is on the menu for selected type 
+	this.getNumberOfGuests = function() {
+	    return numberOfGuests.value;
+	}
+
+	//Returns the dish that is on the menu for selected type
 	this.getSelectedDish = function(type) {
-		//TODO Lab 1
+	    return this.getAllDishes(type, 0);
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		//TODO Lab 1
+	    return menu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		//TODO Lab 1
+	    var meals = this.getFullMenu();
+      var ingredients = [];
+      for(var i = 0; i < meals.length; i++) {
+        var localIngredients = meals[i].ingredients;
+        for(var j = 0; j < localIngredients.length; j++) {
+          ingredients.push(localIngredients[j]);
+        }
+      }
+      return ingredients; //Duplicates occur.
+	}
+
+	this.getDishPrice = function(id) {
+			//TODO
+			return 100;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		//TODO Lab 1
+		var totalPrice = 0;
+		var numberOfGuests = this.getNumberOfGuests();
+		this.getAllIngredients().forEach(function(ingredient) {
+			totalPrice += ingredient.price * numberOfGuests;
+			});
+		return totalPrice;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		//TODO Lab 1 
+    var dishToAdd;
+    for(var i = 0; i < dishes.length; i++) {
+      if(dishes[i].id == id) {
+        dishToAdd = dishes[i];
+      }
+    }
+
+    menu = menu.filter(function(dish) {
+      if(dishToAdd.type == dish.type)
+        return false;
+      return true;
+    });
+    menu.push(dishToAdd);
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		//TODO Lab 1
+		menu = menu.filter(function(dish) {
+      if(id == dish.id)
+        return false;
+      return true;
+    });
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -62,8 +97,8 @@ var DinnerModel = function() {
 				found = true;
 			}
 		}
-	  	return dish.type == type && found;
-	  });	
+	      return (type == 0 || dish.type == type) && found;
+	  });
 	}
 
 	//function that returns a dish of specific ID
@@ -75,12 +110,11 @@ var DinnerModel = function() {
 		}
 	}
 
-
-	// the dishes variable contains an array of all the 
+	// the dishes variable contains an array of all the
 	// dishes in the database. each dish has id, name, type,
-	// image (name of the image file), description and
-	// array of ingredients. Each ingredient has name, 
-	// quantity (a number), price (a number) and unit (string 
+	// image (images/name of the image fileimages/), description and
+	// array of ingredients. Each ingredient has name,
+	// quantity (a number), price (a number) and unit (string
 	// defining the unit i.e. "g", "slices", "ml". Unit
 	// can sometimes be empty like in the example of eggs where
 	// you just say "5 eggs" and not "5 pieces of eggs" or anything else.
@@ -88,9 +122,10 @@ var DinnerModel = function() {
 		'id':1,
 		'name':'French toast',
 		'type':'starter',
-		'image':'toast.jpg',
+		'image':'images/toast.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'eggs',
 			'quantity':0.5,
 			'unit':'',
@@ -120,9 +155,10 @@ var DinnerModel = function() {
 		'id':2,
 		'name':'Sourdough Starter',
 		'type':'starter',
-		'image':'sourdough.jpg',
+		'image':'images/sourdough.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'active dry yeast',
 			'quantity':0.5,
 			'unit':'g',
@@ -142,9 +178,10 @@ var DinnerModel = function() {
 		'id':3,
 		'name':'Baked Brie with Peaches',
 		'type':'starter',
-		'image':'bakedbrie.jpg',
+		'image':'images/bakedbrie.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'round Brie cheese',
 			'quantity':10,
 			'unit':'g',
@@ -164,9 +201,10 @@ var DinnerModel = function() {
 		'id':100,
 		'name':'Meat balls',
 		'type':'main dish',
-		'image':'meatballs.jpg',
+		'image':'images/meatballs.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes.",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'extra lean ground beef',
 			'quantity':115,
 			'unit':'g',
@@ -226,9 +264,10 @@ var DinnerModel = function() {
 		'id':101,
 		'name':'MD 2',
 		'type':'main dish',
-		'image':'bakedbrie.jpg',
+		'image':'images/bakedbrie.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'ingredient 1',
 			'quantity':1,
 			'unit':'pieces',
@@ -248,9 +287,10 @@ var DinnerModel = function() {
 		'id':102,
 		'name':'MD 3',
 		'type':'main dish',
-		'image':'meatballs.jpg',
+		'image':'images/meatballs.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'ingredient 1',
 			'quantity':2,
 			'unit':'pieces',
@@ -270,9 +310,10 @@ var DinnerModel = function() {
 		'id':103,
 		'name':'MD 4',
 		'type':'main dish',
-		'image':'meatballs.jpg',
+		'image':'images/meatballs.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'ingredient 1',
 			'quantity':1,
 			'unit':'pieces',
@@ -292,9 +333,10 @@ var DinnerModel = function() {
 		'id':200,
 		'name':'Chocolat Ice cream',
 		'type':'dessert',
-		'image':'icecream.jpg',
+		'image':'images/icecream.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'ice cream',
 			'quantity':100,
 			'unit':'ml',
@@ -304,9 +346,10 @@ var DinnerModel = function() {
 		'id':201,
 		'name':'Vanilla Ice cream',
 		'type':'dessert',
-		'image':'icecream.jpg',
+		'image':'images/icecream.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'ice cream',
 			'quantity':100,
 			'unit':'ml',
@@ -316,9 +359,10 @@ var DinnerModel = function() {
 		'id':202,
 		'name':'Strawberry',
 		'type':'dessert',
-		'image':'icecream.jpg',
+		'image':'images/icecream.jpg',
+		'info' : "Some text here. That's a tasty looking dish right there. It looks a little cold though, but I can't really place my finger on why.",
 		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
+		'ingredients':[{
 			'name':'ice cream',
 			'quantity':100,
 			'unit':'ml',
@@ -326,5 +370,4 @@ var DinnerModel = function() {
 			}]
 		}
 	];
-
 }

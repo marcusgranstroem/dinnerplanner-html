@@ -1,0 +1,494 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*
+Author: Nathan Bhat & Marcus Granström
+*/
+body, html {
+    background-color: white;
+    height: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%
+}
+
+.inner-container {
+    margin: auto;
+    width: 100%;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.border-object {
+    border-style: solid;
+    border-width: 2px;
+    border-top: none;
+    border-left: none;
+}
+
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 256px;
+}
+
+.text-margin-1 {
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+
+#people-input {
+    display: flex;
+    align-items: baseline;
+}
+
+#people-text {
+    flex: 1;
+}
+
+#total-cost {
+    margin: 8px;
+    align-self: flex-end;
+    color: red;
+    font-family: Arial Black;
+}
+
+#total-cost2 {
+    margin: 8px;
+    align-self: inherit;
+    color: red;
+    font-family: Arial Black;
+    display: none;
+}
+
+#people-input-field {
+    width: 32px;
+    margin-left: 16px;
+}
+
+.dish-banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgrey;
+    width: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-left: none;
+    border-right: none;
+    margin-top: 17px;
+}
+
+
+
+.dish-banner-text {
+    font-weight: bold;
+    padding: 8px;
+}
+
+.dish-in-menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+  background-color: lightgrey;
+  border-style: solid;
+  border-width: 2px;
+  width: 95%;
+  align-self: center;
+  padding: 2px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    height: 128px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.result-view {
+    overflow-y: auto;
+    flex: 1;
+}
+
+
+.main-view {
+    display:flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.ingredient-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.sub-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: solid 2px;
+}
+
+.checkout-object {
+  margin: 16px;
+}
+
+#checkout-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#checkout-menu {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+#vertical-line {
+  width: 1px;
+  height: 80%;
+}
+
+#dish-preperation {
+  text-align: center;
+}
+
+#total-price-text {
+    text-align: left;
+}
+
+#total-price-number {
+  text-align: left;
+  color: red;
+}
+
+#price-tag {
+  margin: 16px;
+  align-self: flex-end;
+}
+
+#checkout-line {
+  width: 80%;
+}
+
+
+#sub-banner-title {
+  margin: 16px;
+  margin-left: 32px;
+}
+
+#dish-more {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#dish-description {
+  flex: 1;
+  margin:32px;
+  text-align: left;
+}
+
+#ingredients-list {
+    flex: 1;
+    text-align: left;
+    border-style: solid;
+    border-width: 2px;
+    border-right: 0px;
+    background-color: khaki;
+    padding: 16px;
+}
+
+#ingredients-total {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+#dish-view {
+    overflow-y: auto;
+}
+
+hr {
+  border-color: black;
+}
+
+.banner {
+    background-color: lightgrey;
+    width: 100%;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 72px;
+    font-family: Bookman Old Style;
+    font-weight: Bold;
+}
+
+h2 {
+    font-size: 24px;
+    font-family: Bookman Old Style;
+    font-weight: Normal;
+}
+
+p {
+    font-family: Bookman Old Style;
+    font-weight: Normal;
+}
+
+
+.info-text {
+    text-align: center;
+    width: 80%;
+    font-size: 32px;
+    font-family: Bookman Old Style;
+    font-weight: Normal;
+    margin: auto;
+}
+
+.small-text {
+    margin: 16px;
+}
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button {
+    background-color: #FFA500;
+    border: none;
+    color: black;
+    font-weight: bold;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin-top: 5%;
+    font-family: Bookman Old Style;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.small-button {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 16px;
+}
+
+.button:disabled {
+    box-shadow: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+#result-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+.dish-object {
+    border-style: solid;
+    width: 140px;
+    border-width: 2px;
+    margin: 16px;
+}
+
+.dish-object-text {
+    border-top: solid 2px;
+    background-color: lightgrey;
+}
+
+#recipe-list {
+  overflow-y: auto;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recipe-image {
+  flex: 1;
+}
+
+.recipe-icon {
+  border: solid 2px;
+}
+
+.recipe-info {
+  flex: 1;
+  text-align: left;
+}
+
+.recipe-preperation {
+  flex: 2;
+  text-align: left;
+}
+
+.recipe-object {
+  margin: 32px;
+}
+
+#confirm-button{
+    align-self: center;
+}
+
+#search-field {
+    margin: 16px;
+}
+
+#search-drop {
+    margin: 16px;
+}
+
+#dinner-collapse {
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+}
+
+#collapse-button {
+    margin-right: 16px;
+    display: none;
+}
+
+#menu-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    body {
+	height: 100%;
+    }
+    .body-container {
+	flex-direction: column;
+    }
+    
+    .info-text {
+	font-size: 22px;
+    }
+    
+    .button {
+	font-size: 100%;
+	white-space: nowrap;
+    }
+
+    .small-button {
+	margin: 0px;
+    }
+
+    .side-bar {
+	flex-basis: 16px;
+    }
+
+    .recipe {
+	display: flex;
+	flex-direction: column;
+	
+    }
+
+    .button {
+	margin: none;
+    }
+
+    #search-field {
+	width: 100%;
+	margin: 0px;
+    }
+
+    #search-drop {
+	margin: 0px;
+    }
+
+    #collapse-button {
+	display: initial;
+    }
+
+    #result-container {
+	justify-content: center;
+    }
+
+    #dish-more {
+	flex-direction: column;
+    }
+
+    #checkout-items {
+	flex-direction: column;
+    }
+

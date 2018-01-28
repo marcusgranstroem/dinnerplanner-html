@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="js/model/dinnerModel.js"></script>
+    <script src="js/view/checkoutView.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="banner">
+	       <h1>Dinner Planner</h1>
+      </div>
+
+      <div id="checkout-container">
+        <div class="sub-banner">
+            <h2 id="sub-banner-title">My Dinner: <span id="numberOfGuests">20</span> people</h2>
+            <a href="main_page.html" class="button button2 small-button">Go back and edit dinner</a>
+        </div>
+        <div id="checkout-menu">
+          <div id="checkout-items">
+              <script>
+              CheckoutView($("#checkout-items"), new DinnerModel());
+              </script>
+          </div>
+
+        </div>
+        <hr id="checkout-line">
+      </div>
+      <div>
+          <a href="recipe_page.html" class="button button2">Print Full Recipe</a>
+      </div>
+
+    </div>
+
+
+  </body>
+</html>

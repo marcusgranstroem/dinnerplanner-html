@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Javascript files goes here -->
+    <!--<script src="js/app.js"></script>-->
+    <script src="js/model/dinnerModel.js"></script>
+    <script src="js/view/exampleView.js"></script>
+    <script src="js/script/hideDropdown.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="banner">
+	<h1>Dinner Planner</h1>
+      </div>
+      <div class="body-container">
+
+	<!-- Sidebar -->
+        <div class="side-bar border-object">
+	  <div id="dinner-collapse" class="no-wrap">
+	 <h2 class="text-margin-1">My dinner</h2>
+	 <button id="collapse-button" class="button button2 small-button" onclick="hideDropdown()">Show</button>
+	 </div>
+	 <div id="people-input" class="no-wrap">
+	   <p id="people-text" class="text-margin-1">People:</p>
+	   <input id="people-input-field" type="number" value="1" min="1">
+	    <p id="total-cost2">
+	      SEK 0.00
+	    </p>
+	</div>
+	 <div id="menu-content">
+	 <div class="dish-banner">
+	   <p class="dish-banner-text">Dish name</p>
+	   <p class="dish-banner-text">Cost</p>
+	 </div>
+	 <p id="total-cost">SEK 0.00</p>
+	 <button id="confirm-button" class="button button2 small-button" disabled="true">Confirm Dinner</button>
+	</div>
+	</div>
+
+	<div class="main-view">
+
+	<!-- Searchbar -->
+	  <div class="search-bar border-object">
+	    <h2 class="small-text">Find a dish</h2>
+	    <div class="no-wrap">
+	    <input type="text" id="search-field" placeholder="Enter key words">
+	    <select id="search-drop">
+	      <option value="all">All</option>
+	      <option value="main_course">Main Course</option>
+	      <option value="side_dish">Side Dish</option>
+	      <option value="dessert">Dessert</option>
+	      <option value="appetizer">Appetizer</option>
+	    </select>
+	    <button class="button button2 small-button">Search</button>
+	    </div>
+	  </div>
+
+	<!-- Results-view -->
+	  <div id="result-container" class="result-view border-object">
+      <script>
+          ExampleView($("#result-container"),new DinnerModel());
+      </script>
+    </div>
+	</div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
