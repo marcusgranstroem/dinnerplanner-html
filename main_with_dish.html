@@ -3,16 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- Javascript files goes here -->
-    <!--
-	<script src="js/app.js">
-	</script>-->
-    <script src="js/model/dinnerModel.js">
-    </script>
-    <script src="js/view/exampleView.js">
-    </script>
-    <script src="js/script/hideDropdown.js">
-    </script>
+    <script src="js/model/dinnerModel.js"> </script>
+    <script src="js/view/resultView.js"></script>
+    <script src="js/view/recipeView.js"></script>
+    <script src="js/view/checkoutView.js"></script>
+    <script src="js/view/sideView.js"></script>
+    <script src="js/view/searchView.js"></script>
+    <script src="js/view/dishView.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
 
@@ -26,7 +23,7 @@
       <div class="body-container">
 
 	<!-- Sidebar -->
-        <div class="side-bar border-object">
+        <div id="side-bar" class="border-object">
 	  <div id="dinner-collapse" class="no-wrap">
 	    <h2 class="text-margin-1">My dinner
 	    </h2>
@@ -66,7 +63,7 @@
 	<div class="main-view">
 
 	<!-- Searchbar -->
-	  <div class="search-bar border-object">
+	  <div id="search-bar" class="search-bar border-object">
 	    <h2 class="small-text">Find a dish
 	    </h2>
 	    <div class="no-wrap">
@@ -90,14 +87,10 @@
 
 	<!-- Results-view -->
 	  <div id="result-container" class="result-view border-object">
-      <script>
-          ExampleView($("#result-container"),new DinnerModel());
-      </script>
     </div>
 	</div>
       </div>
     </div>
-
-
+    <script src="js/app.js"></script>
   </body>
 </html>

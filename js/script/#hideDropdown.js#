@@ -1,0 +1,4 @@
+function hideDropdown() {
+    var x = document.getElementById("menu-content");
+    
+} 

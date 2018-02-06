@@ -1,13 +1,5 @@
 var RecipeView = function (container, model) {
-    var numberOfGuests = 4;
-    var guests = document.getElementById("numberOfGuests");
-    guests.textContent = numberOfGuests;
-
-  //Generating for static view
-  model.addDishToMenu(1);
-  model.addDishToMenu(100);
-  model.addDishToMenu(201);
-
+    
   var results = "";
   var dishes = model.getFullMenu();
   for (var i = 0; i < dishes.length; i++) {

@@ -82,7 +82,7 @@ body, html {
 }
 
 
-.side-bar {
+#side-bar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -155,7 +155,7 @@ body, html {
   padding: 2px;
 }
 
-.search-bar {
+#search-bar {
     display: flex;
     flex-direction: column;
     height: 128px;
@@ -451,10 +451,6 @@ p {
 
     .small-button {
 	margin: 0px;
-    }
-
-    .side-bar {
-	flex-basis: 16px;
     }
 
     .recipe {

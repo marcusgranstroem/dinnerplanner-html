@@ -1,12 +1,4 @@
 var CheckoutView = function (container, model) {
-    var numberOfGuests = 4;
-    var guests = document.getElementById("numberOfGuests");
-    guests.textContent = numberOfGuests;
-
-    // Just to show some data
-    model.addDishToMenu(1);
-    model.addDishToMenu(100);
-    model.addDishToMenu(200);
     
     var results = "";
     var totalPrice = 0;

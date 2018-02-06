@@ -4,7 +4,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js/model/dinnerModel.js"></script>
     <script src="js/view/dishView.js"></script>
-    <script src="js/script/hideDropdown.js"></script>
+    <script src="js/view/sideView.js"></script>
+    <script src="js/view/searchView.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
@@ -16,7 +17,7 @@
       <div class="body-container">
 
 	<!-- Sidebar -->
-        <div id ="sidebar" class="side-bar border-object">
+        <div id ="side-bar" class="border-object">
 	  <div id="dinner-collapse" class="no-wrap">
 	  <h2 class="text-margin-1">My dinner
 	  </h2>
@@ -47,7 +48,7 @@
 	<div id="dish-view" class="main-view">
 
 	<!-- ingredients-view -->
-	  <div  class="result-view border-object">
+	  <div id="dish-details" class="result-view border-object">
       <div id="dish-more">
         <div id="dish-description">
           <h2>LASAGNE
@@ -110,8 +111,6 @@
 	</div>
     </div>
     </div>
-    <script>
-          DishView($("#sidebar"), new DinnerModel());
-    </script>
+    <script src="js/app.js"></script>
   </body>
 </html>

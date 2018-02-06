@@ -13,8 +13,4 @@
  * @param {Object} model - the reference to the Dinner Model
  */
 var DishView = function (container, model) {
-
-    var numberOfGuests = 4;
-    var guests = document.getElementById("people-input-field");
-    guests.value = numberOfGuests;
 }
