@@ -4,7 +4,7 @@ $(function() {
     var views = {
 	"resultView" : $("#result-container"),
 	"recipeView" : $("#recipe-list"),
-	"checkoutView" : $("#checkout-tiems"),
+	"checkoutView" : $("#checkout-items"),
 	"dishView" : $("#dish-details"),
 	"sideView" : $("#side-bar"),
 	"searchView" : $("#search-bar")
@@ -30,6 +30,15 @@ $(function() {
     sideView = new SideView(views.sideView, model);
     
     searchView = new SearchView(views.searchView, model);
+
+
+    // Initiate our controllers
+    var resultViewController = new ResultViewController(resultView, model);
+    var recipeViewController = new RecipeViewController(recipeView, model);
+    var checkoutViewController = new CheckoutViewController(checkoutView, model);
+    var dishViewController = new DishViewController(dishView, model);
+    var sideViewController = new SideViewController(sideView, model);
+    var searchViewController = new SearchViewController(searchView, model);
 
     /**
      * IMPORTANT: app.js is the only place where you are allowed to

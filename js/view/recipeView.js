@@ -1,19 +1,24 @@
 var RecipeView = function (container, model) {
     
-  var results = "";
-  var dishes = model.getFullMenu();
-  for (var i = 0; i < dishes.length; i++) {
-    results += "<div class=\"recipe\">";
-    results += "<div class=\"recipe-image recipe-object\"><img class=\"recipe-icon\" src=\"" + dishes[i].image + "\"></div>";
-    results += "<div class=\"recipe-info recipe-object\">";
-    results += "<h2>" + dishes[i].name + "</h2>";
-    results += "<p>" + dishes[i].info + "</p>";
-    results += "</div>";
-    results += "<div class=\"recipe-preperation recipe-object\">"
-    results += "<h2>PREPERATION</h2>"
-    results += "<p>" + dishes[i].description + "</p>"
-    results += "</div>";
-    results += "</div>";
-  }
-  container.append(results);
+    var htmlContent = "";
+    var dishes = model.getFullMenu();
+    var numberOfGuests = model.getNumberOfGuest();
+    
+    
+  
+    for (var i = 0; i < dishes.length; i++) {
+	htmlContent += "<div class=\"recipe\">";
+	htmlContent += "<div class=\"recipe-image recipe-object\"><img class=\"recipe-icon\" src=\"" + dishes[i].image + "\"></div>";
+	htmlContent += "<div class=\"recipe-info recipe-object\">";
+	htmlContent += "<h2>" + dishes[i].name + "</h2>";
+	htmlContent += "<p>" + dishes[i].info + "</p>";
+	htmlContent += "</div>";
+	htmlContent += "<div class=\"recipe-preperation recipe-object\">"
+	htmlContent += "<h2>PREPERATION</h2>"
+	htmlContent += "<p>" + dishes[i].description + "</p>"
+	htmlContent += "</div>";
+	htmlContent += "</div>";
+    
+}
+    container.append(htmlContent);
 }
