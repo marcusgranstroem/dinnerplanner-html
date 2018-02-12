@@ -33,12 +33,12 @@ $(function() {
 
 
     // Initiate our controllers
-    var resultViewController = new ResultViewController(resultView, model);
-    var recipeViewController = new RecipeViewController(recipeView, model);
-    var checkoutViewController = new CheckoutViewController(checkoutView, model);
-    var dishViewController = new DishViewController(dishView, model);
-    var sideViewController = new SideViewController(sideView, model);
-    var searchViewController = new SearchViewController(searchView, model);
+    var resultViewController = new ResultViewController(this, resultView, model);
+    var recipeViewController = new RecipeViewController(this, recipeView, model);
+    var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
+    var dishViewController = new DishViewController(this, dishView, model);
+    var sideViewController = new SideViewController(this, sideView, model);
+    var searchViewController = new SearchViewController(this, searchView, model);
 
     /**
      * IMPORTANT: app.js is the only place where you are allowed to
@@ -56,31 +56,31 @@ $(function() {
     }
 
     // Display "main_page"
-    var showMainPage = function() {
+    this.showMainPage = function() {
         hideAll();
         views.resultView.show();
         views.sideView.show();
         views.searchView.show();
     }
 
-    var showCheckout = function() {
+    this.showCheckout = function() {
         hideAll();
         views.checkoutView.show();
     }
 
-    var showDish = function() {
+    this.showDish = function() {
         hideAll();
         views.dishView.show();
         views.sideView.show();
     }
 
-    var showIndex = function() {
+    this.showIndex = function() {
         hideAll();
         // TODO
         //views.indexView.show();
     }
 
-    var showRecipe = function() {
+    this.showRecipe = function() {
         hideAll();
         views.recipeView.show();
     }
