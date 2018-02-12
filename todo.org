@@ -1,0 +1,17 @@
+* Lab2 [25%]
+  DEADLINE: <2018-02-14 Wed>
+  1. [0%] implement dynamic views (add content)
+     * [ ] CheckoutView
+     * [ ] ResultView
+     * [ ] SearchView
+     * [ ] ReciepeView
+     * [ ] SideView
+     * [ ] DishView
+  2. [X] Add observers to model
+     * [X] this.addObserver
+     * [X] notifyOobservers
+  3. [ ] this.upadate for all views
+  4. [ ] controller for all views
+  5. [ ] add plus/minus btn for numberOfGuests
+
+
