@@ -1,1 +1,1 @@
-var ResultViewController = function(container, model) {}
+var CheckoutViewController = function(container, model) {}

@@ -1,1 +1,1 @@
-var ResultViewController = function(container, model) {}
+var DishViewController = function(container, model) {}
