@@ -35,9 +35,9 @@ var CheckoutView = function (container, model) {
 
     container.find("#checkout-items").append(htmlContent);
 
-    this.getBackAndEditBtn = function() {
+    /*this.getBackAndEditBtn = function() {
         return container.find('#back-and-edit').get(0);
-    }
+    }*/
 
     this.getFullRecipeBtn = function() {
         return container.find('#print-full-recipe').get(0);

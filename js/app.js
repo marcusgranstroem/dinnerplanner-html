@@ -42,7 +42,7 @@ $(function() {
     // Initiate our controllers
     var resultViewController = new ResultViewController(this, resultView, model);
     //var recipeViewController = new RecipeViewController(this, recipeView, model);
-    //var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
+    var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
     //var dishViewController = new DishViewController(this, dishView, model);
     var sideViewController = new SideViewController(this, sideView, model);
     //var searchViewController = new SearchViewController(this, searchView, model);
@@ -94,6 +94,6 @@ $(function() {
 	views.indexView.show();
     }
 
-    this.showMainPage();
+    this.showCheckout();
 
 });

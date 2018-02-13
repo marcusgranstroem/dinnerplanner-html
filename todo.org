@@ -17,8 +17,8 @@
      * [X] notifyOobservers
   3. [ ] this.upadate for all views
   4. [25%] controller for all views
-     - [ ] Checkout
-     - [ ] Recipe
+     - [X] Checkout
+     - [ ] Recipe (No listeners exist)
      - [X] Result
      - [ ] Dish
      - [ ] Side
