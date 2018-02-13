@@ -15,7 +15,7 @@ var CheckoutView = function (container, model) {
     htmlContent += "<hr id=\"checkout-line\">";
     htmlContent += "</div>";
     htmlContent += "<div>";
-    htmlContent += "<a href=\"recipe_page.html\" class=\"button button2\">Print Full Recipe</a>";
+    htmlContent += "<button id=\"print-full-recipe\" class=\"button button2\">Print Full Recipe</button>";
     htmlContent += "</div>";
 
 
