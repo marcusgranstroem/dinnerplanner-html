@@ -72,6 +72,6 @@ var SideView = function(container, model) {
     }
 
     this.getMinusBtn = function() {
-        return container.find('#increment-guests-btn').get(0);
+        return container.find('#decrement-guests-btn').get(0);
     }
 }
