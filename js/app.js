@@ -20,6 +20,9 @@ $(function() {
     model.addDishToMenu(100);
     model.addDishToMenu(200);*/
 
+    //Initialize searchResults
+    model.makeSearch(0,0);
+
     // And create the instance of ResultView
     resultView = new ResultView(views.resultView, model);
 

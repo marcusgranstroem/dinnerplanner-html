@@ -3,8 +3,8 @@ var SearchViewController = function(generalController, view, model) {
     var search = function(evt) {
         var selection = view.getSelection();
         var filter = view.getSearchField();
-        console.log(selection);
-        console.log(filter);
+        if(selection == 'all')
+            selection = 0;
         model.makeSearch(selection, filter);
         model.notifyObservers("made_search");
     }
