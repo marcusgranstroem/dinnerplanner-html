@@ -1,7 +1,6 @@
 var SearchView = function(container, model) {
     var htmlContent = "";
 
-    htmlContent += "<div id=\"search-bar\" class=\"border-object\">";
     htmlContent += "<h2 class=\"small-text\">Find a dish </h2>";
     htmlContent += "<div class=\"no-wrap\">";
     htmlContent += "<input type=\"text\" id=\"search-field\" placeholder=\"Enter key words\">";
@@ -13,7 +12,6 @@ var SearchView = function(container, model) {
     htmlContent += "<option value=\"appetizer\">Appetizer </option>";
     htmlContent += "</select>";
     htmlContent += "<button class=\"button button2 small-button\">Search </button>";
-    htmlContent += "</div>";
     htmlContent += "</div>";
 
     container.append(htmlContent);

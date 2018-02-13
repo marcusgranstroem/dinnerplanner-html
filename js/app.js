@@ -92,6 +92,6 @@ $(function() {
 	views.indexView.show();
     }
 
-    this.showCheckout();
+    this.showMainPage();
 
 });

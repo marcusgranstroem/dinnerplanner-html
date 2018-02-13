@@ -18,6 +18,7 @@ var CheckoutView = function (container, model) {
 
     htmlContent = "";
 
+    // Generate content from model
     model.getFullMenu().forEach(function(dish) {
 	htmlContent += "<div class=\"checkout-object\">";
 	htmlContent += "<div class=\"dish-object\">";
@@ -33,9 +34,6 @@ var CheckoutView = function (container, model) {
     htmlContent += "<div id=\"price-tag\"><p id=\"total-price-text\">Total: </p><p id=\"total-price-number\">" + totalPrice + " SEK</p></div>";
 
     container.find("#checkout-items").append(htmlContent);
-
-
-
 
     this.getBackAndEditBtn = function() {
         return container.find('#back-and-edit').get(0);

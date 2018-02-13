@@ -82,7 +82,7 @@ body, html {
 }
 
 
-#side-bar {
+#side-view {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -155,7 +155,7 @@ body, html {
   padding: 2px;
 }
 
-#search-bar {
+#search-view {
     display: flex;
     flex-direction: column;
     height: 128px;
@@ -353,7 +353,7 @@ p {
     opacity: 0.6;
     cursor: not-allowed;
 }
-#result-container {
+#result-view {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -476,7 +476,7 @@ p {
 	display: initial;
     }
 
-    #result-container {
+    #result-view {
 	justify-content: center;
     }
 
