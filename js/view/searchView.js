@@ -5,6 +5,7 @@ var SearchView = function(container, model) {
     htmlContent += "<div class=\"no-wrap\">";
     htmlContent += "<input type=\"text\" id=\"search-field\" placeholder=\"Enter key words\">";
     htmlContent += "<select id=\"search-drop\">";
+    htmlContent += "<option value=\"all\">All</option>";
     htmlContent += "<option value=\"main dish\">Main Course </option>";
     htmlContent += "<option value=\"dessert\">Dessert </option>";
     htmlContent += "<option value=\"starter\">Appetizer </option>";
