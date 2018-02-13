@@ -1,5 +1,5 @@
 var SearchView = function(container, model) {
-    var htmlContent;
+    var htmlContent = "";
 
     htmlContent += "<div id=\"search-bar\" class=\"border-object\">";
     htmlContent += "<h2 class=\"small-text\">Find a dish </h2>";

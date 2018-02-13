@@ -7,7 +7,8 @@ $(function() {
         "checkoutView": $("#checkout-items"),
         "dishView": $("#dish-details"),
         "sideView": $("#side-bar"),
-        "searchView": $("#search-bar")
+        "searchView": $("#search-bar"),
+        "indexView": $("#welcome-text")
     }
 
     //We instantiate our model
@@ -30,15 +31,18 @@ $(function() {
     sideView = new SideView(views.sideView, model);
 
     searchView = new SearchView(views.searchView, model);
+    
+    indexView = new IndexView(views.indexView, model);
 
 
     // Initiate our controllers
     var resultViewController = new ResultViewController(this, resultView, model);
-    var recipeViewController = new RecipeViewController(this, recipeView, model);
+    //var recipeViewController = new RecipeViewController(this, recipeView, model);
     var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
     var dishViewController = new DishViewController(this, dishView, model);
     var sideViewController = new SideViewController(this, sideView, model);
-    var searchViewController = new SearchViewController(this, searchView, model);
+    //var searchViewController = new SearchViewController(this, searchView, model);
+    //var indexViewController = new IndexViewController(this, IndexView, model);
 
     /**
      * IMPORTANT: app.js is the only place where you are allowed to
@@ -50,7 +54,7 @@ $(function() {
     var hideAll = function() {
         for (var key in views) {
             if (views.hasOwnProperty(key)) {
-                views.key.hide();
+                views[key].hide();
             }
         }
     }
@@ -74,15 +78,17 @@ $(function() {
         views.sideView.show();
     }
 
-    this.showIndex = function() {
-        hideAll();
-        // TODO
-        //views.indexView.show();
-    }
 
     this.showRecipe = function() {
         hideAll();
         views.recipeView.show();
     }
+
+    this.showIndex = function() {
+	hideAll();
+	views.indexView.show();
+    }
+
+    this.showMainPage();
 
 });

@@ -1,4 +1,5 @@
 var ResultViewController = function(generalController, container, model) {
+
     var dishBtn = container.get(0);
     var dishClick = function(evt) {
         if(evt.target.className != "dish-object")

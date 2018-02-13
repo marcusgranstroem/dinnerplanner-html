@@ -2,7 +2,7 @@ var RecipeView = function (container, model) {
     
     var htmlContent = "";
     var dishes = model.getFullMenu();
-    var numberOfGuests = model.getNumberOfGuest();
+    var numberOfGuests = model.getNumberOfGuests();
     
     
   

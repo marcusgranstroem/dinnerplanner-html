@@ -1,6 +1,6 @@
 var SideView = function(container, model) {
 
-    var htmlContent;
+    var htmlContent = "";
     htmlContent += "<div id=\"side-bar\" class=\"side-bar border-object\">";
     htmlContent += "<div id=\"dinner-collapse\" class=\"no-wrap\">";
     htmlContent += "<h2 class=\"text-margin-1\">My dinner</h2>";
