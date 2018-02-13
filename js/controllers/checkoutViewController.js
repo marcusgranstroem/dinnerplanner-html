@@ -1,1 +1,1 @@
-var CheckoutViewController = function(container, model) {}
+var CheckoutViewController = function(generalController, container, model) {}
