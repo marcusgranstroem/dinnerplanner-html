@@ -9,7 +9,7 @@ var SideView = function(container, model) {
     htmlContent += "<p id=\"people-text\" class=\"text-margin-1\">People: " + model.getNumberOfGuests() + "</p>";
     htmlContent += "<button id=\"increment-guests-btn\" class=\"button button2 small-button\">+</button>";
     htmlContent += "<button id=\"decrement-guests-btn\" class=\"button button2 small-button\">-</button>";
-    htmlContent += "<p id=\"total-cost2\">SEK 0.00</p>";
+    htmlContent += "<p id=\"total-cost2\">SEK 0</p>";
     htmlContent += "</div>";
     htmlContent += "<div id=\"menu-content\">";
     htmlContent += "<div class=\"dish-banner\">";
@@ -17,7 +17,7 @@ var SideView = function(container, model) {
     htmlContent += "<p class=\"dish-banner-text\">Cost </p>";
     htmlContent += "</div>";
     htmlContent += "<div id=\"dishes-side-view\"></div>";
-    htmlContent += "<p id=\"total-cost\">SEK 0.00 </p>";
+    htmlContent += "<p id=\"total-cost\">SEK 0 </p>";
     htmlContent += "<button id=\"confirm-button\" class=\"button button2 small-button\">Confirm Dinner </button>";
     htmlContent += "</div>";
 
