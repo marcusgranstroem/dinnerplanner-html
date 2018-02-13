@@ -1,5 +1,4 @@
 var DishView = function (container, model) {
-    var currentDish;
     var htmlContent = "";
 
 
@@ -50,16 +49,17 @@ var DishView = function (container, model) {
     var update = function(model, changeDetails) {
 	switch(changeDetails) {
 	case "dish_chosen":
-	    currentDish = model.getChosenDish();
 	    updateHTML();
-    case "changed_number_of_guests":
-        updateHTML();
+	    break;
+	case "changed_number_of_guests":
+            updateHTML();
 	    break;
 	}
     }
     model.addObserver(update);
 
     var updateHTML = function() {
+	var currentDish = model.getChosenDish();
 	var guests = model.getNumberOfGuests();
 	container.find("#dish-name").html(currentDish.name);
 	container.find("#dish-image").attr({"src" : currentDish.image, "alt" : currentDish.name});
