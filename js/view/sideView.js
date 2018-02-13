@@ -6,7 +6,9 @@ var SideView = function(container, model) {
     htmlContent += "<button id=\"collapse-button\" class=\"button button2 small-button\">Show</button>";
     htmlContent += "</div>";
     htmlContent += "<div id=\"people-input\" class=\"no-wrap\">";
-    htmlContent += "<p id=\"people-text\" class=\"text-margin-1\"></p>";
+    htmlContent += "<p id=\"people-text\" class=\"text-margin-1\">People: " + model.getNumberOfGuests() + "</p>";
+    htmlContent += "<button id=\"increment-guests-btn\" class=\"button button2 small-button\">+</button>";
+    htmlContent += "<button id=\"decrement-guests-btn\" class=\"button button2 small-button\">-</button>";
     htmlContent += "<p id=\"total-cost2\">SEK 0.00</p>";
     htmlContent += "</div>";
     htmlContent += "<div id=\"menu-content\">";
@@ -46,8 +48,10 @@ var SideView = function(container, model) {
     var updateHTML = function() {
 	var totPrice = model.getTotalMenuPrice();
 	var menu = model.getFullMenu();
+	var guests = model.getNumberOfGuests();
 
-	container.find("#total-cost").html("SEK " + totPrice);
+	container.find("#people-text").html("People: " + guests);
+	//container.find("#total-cost").html("SEK " + totPrice);
 	container.find("#total-cost2").html("SEK " + totPrice);
 
 	var dishList = "";
