@@ -1,14 +1,14 @@
 * Lab2 [100%]
   DEADLINE: <2018-02-14 Wed>
-  1. [75%] implement dynamic views (add content)
+  1. [100%] implement dynamic views (add content)
      - [X] CheckoutView
      - [X] ResultView
-     - [ ] SearchView
-       + [ ] Implement search and filter
+     - [X] SearchView
+       + [X] Implement search and filter
      - [X] ReciepeView
-     - [-] SideView
+     - [X] SideView
        + [X] Add dishes from menu
-       + [ ] Change number of guests
+       + [X] Change number of guests
      - [X] DishView
      - [X] IndexView
      - [X] SubBannerView
@@ -22,15 +22,15 @@
      - [X] Dish
      - [X] Side
      - [X] SubBanner
-  4. [62%] controller for all views
+  4. [100%] controller for all views
      - [X] Checkout
      - [X] Recipe (No listeners exist)
      - [X] Result
      - [X] Dish
-     - [ ] Side
-     - [ ] Search
+     - [X] Side
+     - [X] Search
      - [X] Index
-     - [ ] SubBanner
+     - [X] SubBanner
   5. [X] add plus/minus btn for numberOfGuests
 
 
