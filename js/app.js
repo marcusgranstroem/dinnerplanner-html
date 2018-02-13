@@ -2,13 +2,14 @@ $(function() {
     var resultView, recipeView, checkoutView, dishView, sideView, searchView;
 
     var views = {
-        "resultView": $("#result-container"),
-        "recipeView": $("#recipe-list"),
-        "checkoutView": $("#checkout-items"),
-        "dishView": $("#dish-details"),
-        "sideView": $("#side-bar"),
-        "searchView": $("#search-bar"),
-        "indexView": $("#welcome-text")
+        "resultView": $("#result-view"),
+        "recipeView": $("#recipe-view"),
+        "checkoutView": $("#checkout-view"),
+        "dishView": $("#dish-view"),
+        "sideView": $("#side-view"),
+        "searchView": $("#search-view"),
+        "indexView": $("#welcome-view"),
+        "subBannerView": $("#sub-banner-view")
     }
 
     //We instantiate our model
@@ -33,13 +34,15 @@ $(function() {
     searchView = new SearchView(views.searchView, model);
     
     indexView = new IndexView(views.indexView, model);
+    
+    //subBannerView = new IndexView(views.subBannerView, model);
 
 
     // Initiate our controllers
     var resultViewController = new ResultViewController(this, resultView, model);
     //var recipeViewController = new RecipeViewController(this, recipeView, model);
-    var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
-    var dishViewController = new DishViewController(this, dishView, model);
+    //var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
+    //var dishViewController = new DishViewController(this, dishView, model);
     var sideViewController = new SideViewController(this, sideView, model);
     //var searchViewController = new SearchViewController(this, searchView, model);
     //var indexViewController = new IndexViewController(this, IndexView, model);
@@ -89,6 +92,6 @@ $(function() {
 	views.indexView.show();
     }
 
-    this.showMainPage();
+    this.showCheckout();
 
 });

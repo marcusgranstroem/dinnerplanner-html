@@ -33,7 +33,7 @@ var SideView = function(container, model) {
     }
 
     this.getConfirmBtn = function() {
-        container.find('#confirm-button').get(0)
+        return container.find('#confirm-button').get(0)
     }
 
     container.append(htmlContent);

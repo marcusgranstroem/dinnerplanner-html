@@ -10,6 +10,6 @@ var ResultView = function (container, model) {
 	container.append(results);
 
 	this.getDishBtn = function() {
-		container.get(0);
+		return container.get(0);
 	}
 }
