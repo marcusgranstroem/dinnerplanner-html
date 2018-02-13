@@ -15,6 +15,7 @@ $(function() {
     //We instantiate our model
     var model = new DinnerModel();
 
+    model.setChosenDish(1); // Set some state for the dishView
     // Just to show some data
     model.addDishToMenu(1);
     model.addDishToMenu(100);
