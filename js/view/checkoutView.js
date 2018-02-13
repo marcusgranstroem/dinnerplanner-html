@@ -45,6 +45,9 @@ var CheckoutView = function (container, model) {
             case "added_dish_to_menu":
                 updateHTML();
                 break;
+            case "changed_number_of_guests":
+                updateHTML();
+                break;
             default:
                 break;
         }

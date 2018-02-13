@@ -39,10 +39,13 @@ var SideView = function(container, model) {
 	case "added_dish_to_menu":
 	    updateHTML();
 	    break;
+    case "changed_number_of_guests":
+        updateHTML();
+        break;
 	}
     }
     model.addObserver(update);
-    
+
     var updateHTML = function() {
 	var totPrice = model.getTotalMenuPrice();
 	var menu = model.getFullMenu();
@@ -52,10 +55,10 @@ var SideView = function(container, model) {
 
 	var dishList = "";
 	menu.forEach(function(dish) {
-	    dishList += "<div class =\"dish-in-menu\">"; 
+	    dishList += "<div class =\"dish-in-menu\">";
 	    dishList += "<p>" + dish.name + "</p>";
 	    dishList += "<p>" + model.getDishPrice(dish.id) + "</p>";
-	    dishList += "</div>"; 
+	    dishList += "</div>";
 	});
 	container.find("#dishes-side-view").html(dishList);
     }
