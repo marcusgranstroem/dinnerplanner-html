@@ -35,4 +35,12 @@ var CheckoutView = function (container, model) {
 
 
     container.append(htmlContent);
+
+    this.getBackAndEditBtn = function() {
+        return container.find('#back-and-edit').get(0);
+    }
+
+    this.getFullRecipeBtn = function() {
+        return container.find('#print-full-recipe').get(0);
+    }
 }

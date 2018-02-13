@@ -1,5 +1,5 @@
 var DishView = function (container, model) {
-    var htmlContent;
+    var htmlContent = "";
 
     // This needs a serious cleanup
     htmlContent += "<div id=\"dish-details\" class=\"result-view border-object\">";
@@ -46,4 +46,14 @@ var DishView = function (container, model) {
     htmlContent += "<h2>PREPERATION";
     htmlContent += "</h2>";
     htmlContent += "</div>";
+
+    container.append(htmlContent);
+
+    this.getAddToMenuBtn = function() {
+        return container.find('#add-to-menu').get(0);
+    }
+
+    this.getBackToSearchBtn = function() {
+        return container.find('#back-to-search').get(0);
+    }
 }

@@ -1,12 +1,12 @@
-var DishViewController = function(generalController, container, model) {
-    var addToMenuBtn = container.find('#add-to-menu').get(0);
+var DishViewController = function(generalController, view, model) {
+    var addToMenuBtn = view.getAddToMenuBtn();
     var addToMenu = function(evt) {
         model.addDishToMenu(model.getChosenDish());
         generalController.showMainPage();
     }
     addToMenuBtn.addEventListener("click", addToMenu, false);
 
-    var backToSearchBtn = container.find('#back-to-search').get(0);
+    var backToSearchBtn = view.getBackToSearchBtn();
     var backToSearch = function(evt) {
         generalController.showMainPage();
     }

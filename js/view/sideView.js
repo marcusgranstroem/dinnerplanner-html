@@ -23,6 +23,19 @@ var SideView = function(container, model) {
     htmlContent += "</div>";
     htmlContent += "</div>";
 
+    this.getCollapseBtn = function() {
+        return container.find('#collapse-button').get(0);
+    }
+
+    this.collapse = function() {
+        container.find("#total-cost2").toggle();
+    	container.find("#menu-content").toggle();
+    }
+
+    this.getConfirmBtn = function() {
+        container.find('#confirm-button').get(0)
+    }
+
     container.append(htmlContent);
 
 

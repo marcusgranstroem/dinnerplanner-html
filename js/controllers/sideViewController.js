@@ -1,12 +1,11 @@
-var SideViewController = function(generalController, container, model) {
-    var collapseBtn = container.find('#collapse-button').get(0);
+var SideViewController = function(generalController, view, model) {
+    var collapseBtn = view.getCollapseBtn();
     var collapse = function(evt) {
-        container.find("#total-cost2").toggle();
-    	container.find("#menu-content").toggle();
+        view.collapse();
     }
     collapseBtn.addEventListener("click", collapse, false);
 
-    var confirmBtn = container.find('#confirm-button').get(0);
+    var confirmBtn = view.getConfirmBtn();
     var confirm = function(evt) {
         generalController.showCheckout();
     }

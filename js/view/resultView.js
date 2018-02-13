@@ -8,4 +8,8 @@ var ResultView = function (container, model) {
 		results += "</div>";
 	}
 	container.append(results);
+
+	this.getDishBtn = function() {
+		container.get(0);
+	}
 }
