@@ -1,16 +1,15 @@
 var DishView = function (container, model) {
-    var currentDish = model.getChosenDish();
+    var currentDish;
     var htmlContent = "";
 
-    console.log(currentDish);
     
 
     // This needs a serious cleanup
     htmlContent += "<div id=\"dish-details\" class=\"result-view border-object\">";
     htmlContent += "<div id=\"dish-more\">";
     htmlContent += "<div id=\"dish-description\">";
-    htmlContent += "<h2>" + currentDish.name + "</h2>";
-    htmlContent += "<img src=\"" + currentDish.image + "\" alt=\"Lasagne\">";
+    htmlContent += "<h2 id=\"dish-name\"></h2>";
+    htmlContent += "<img id=\"dish-picture\">";
     htmlContent += "<p>Some text here. That's a tasty looking lasagna right there. It looks a little cold though, but I can't really place my finger on why. </p>";
     htmlContent += "<button id=\"back-to-search\" class=\"button button2 small-button\">back to search </button>";
     htmlContent += "</div>";
@@ -60,4 +59,18 @@ var DishView = function (container, model) {
     this.getBackToSearchBtn = function() {
         return container.find('#back-to-search').get(0);
     }
+
+    this.update = function(model, changeDetails) {
+	switch(changeDetails) {
+	case "dish_chosen":
+	    currentDish = model.getChosenDish();
+	    updateHTML();
+	    break;
+	}
+    }
+
+    var updateHTML = function() {
+	container.find("#dish-name").html(currentDish.name);
+    }
 }
+
