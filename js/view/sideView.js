@@ -45,7 +45,6 @@ var SideView = function(container, model) {
     
     var updateHTML = function() {
 	var totPrice = model.getTotalMenuPrice();
-	var guests = model.getNumberOfGuests();
 	var menu = model.getFullMenu();
 
 	container.find("#total-cost").html("SEK " + totPrice);
@@ -55,7 +54,7 @@ var SideView = function(container, model) {
 	menu.forEach(function(dish) {
 	    dishList += "<div class =\"dish-in-menu\">"; 
 	    dishList += "<p>" + dish.name + "</p>";
-	    dishList += "<p>" + model.getDishPrice(dish.id) * guests + "</p>";
+	    dishList += "<p>" + model.getDishPrice(dish.id) + "</p>";
 	    dishList += "</div>"; 
 	});
 	container.find("#dishes-side-view").html(dishList);
