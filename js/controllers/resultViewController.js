@@ -17,7 +17,6 @@ var ResultViewController = function(generalController, view, model) {
         model.setChosenDish(id);
         model.notifyObservers("dish_chosen");
         generalController.showDish();
-        console.log(id);
     }
     dishBtn.addEventListener("click", dishClick, false);
 }

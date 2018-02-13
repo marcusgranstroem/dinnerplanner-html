@@ -44,7 +44,7 @@ $(function() {
     var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
     //var dishViewController = new DishViewController(this, dishView, model);
     var sideViewController = new SideViewController(this, sideView, model);
-    //var searchViewController = new SearchViewController(this, searchView, model);
+    var searchViewController = new SearchViewController(this, searchView, model);
     var indexViewController = new IndexViewController(this, indexView, model);
 
 

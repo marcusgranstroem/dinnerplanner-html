@@ -7,6 +7,7 @@ var DinnerModel = function() {
     var numberOfGuests = 4;
     var observers = [];
     var menu = [];
+    var searchResults = [];
     var chosenDish;
 
     this.setNumberOfGuests = function(num) {
@@ -73,7 +74,6 @@ var DinnerModel = function() {
             return true;
         });
         menu.push(dishToAdd);
-        this.notifyObservers("added-dish-to-menu");
     }
 
     //Removes dish from menu
@@ -139,6 +139,10 @@ var DinnerModel = function() {
 
     this.getChosenDish = function() {
         return chosenDish;
+    }
+
+    this.makeSearch = function(type, filter) {
+        searchResults = this.getAllDishes(type, filter);
     }
 
     // the dishes variable contains an array of all the
