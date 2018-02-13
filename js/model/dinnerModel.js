@@ -142,6 +142,10 @@ var DinnerModel = function() {
         return chosenDish;
     }
 
+    this.makeSearch = function(type, filter) {
+        searchResults = this.getAllDishes(type, filter);
+    }
+
     // the dishes variable contains an array of all the
     // dishes in the database. each dish has id, name, type,
     // image (images/name of the image fileimages/), description and
