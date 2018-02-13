@@ -136,6 +136,10 @@ var DinnerModel = function() {
         notifyObservers("dish_chosen");
     }
 
+    this.getChosenDish = function() {
+        return chosenDish;
+    }
+
     // the dishes variable contains an array of all the
     // dishes in the database. each dish has id, name, type,
     // image (images/name of the image fileimages/), description and
