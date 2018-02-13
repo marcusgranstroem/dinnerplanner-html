@@ -93,6 +93,6 @@ $(function() {
 	views.indexView.show();
     }
 
-    this.showMainPage();
+    this.showIndex();
 
 });
