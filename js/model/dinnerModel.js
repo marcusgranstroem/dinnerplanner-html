@@ -143,7 +143,6 @@ var DinnerModel = function() {
 
     this.makeSearch = function(type, filter) {
         searchResults = this.getAllDishes(type, filter);
-        console.log(searchResults);
     }
 
     this.getSearchedDishes = function() {
