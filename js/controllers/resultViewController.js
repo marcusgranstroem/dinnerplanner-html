@@ -1,3 +1,3 @@
-var ResultViewController = function(container, model) {
-    
+var ResultViewController = function(generalController, container, model) {
+
 }

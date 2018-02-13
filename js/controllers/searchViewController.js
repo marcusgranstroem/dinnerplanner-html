@@ -1,1 +1,1 @@
-var SearchViewController = function(container, model) {}
+var SearchViewController = function(generalController, container, model) {}

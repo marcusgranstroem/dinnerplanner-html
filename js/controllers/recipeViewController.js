@@ -1,1 +1,1 @@
-var RecipeViewController = function(container, model) {}
+var RecipeViewController = function(generalController, container, model) {}
