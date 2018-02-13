@@ -14,6 +14,7 @@ var SideView = function(container, model) {
     htmlContent += "<p class=\"dish-banner-text\">Dish name </p>";
     htmlContent += "<p class=\"dish-banner-text\">Cost </p>";
     htmlContent += "</div>";
+    htmlContent += "<div id=\"dishes-side-view\"></div>";
     htmlContent += "<p id=\"total-cost\">SEK 0.00 </p>";
     htmlContent += "<button id=\"confirm-button\" class=\"button button2 small-button\">Confirm Dinner </button>";
     htmlContent += "</div>";
@@ -37,18 +38,26 @@ var SideView = function(container, model) {
 	switch(changeDetails) {
 	case "added_dish_to_menu":
 	    updateHTML();
+	    break;
 	}
     }
+    model.addObserver(update);
     
     var updateHTML = function() {
 	var totPrice = model.getTotalMenuPrice();
 	var guests = model.getNumberOfGuests();
+	var menu = model.getFullMenu();
 
 	container.find("#total-cost").html("SEK " + totPrice);
 	container.find("#total-cost2").html("SEK " + totPrice);
-	
+
+	var dishList = "";
+	menu.forEach(function(dish) {
+	    dishList += "<div class =\"dish-in-menu\">"; 
+	    dishList += "<p>" + dish.name + "</p>";
+	    dishList += "<p>" + model.getDishPrice(dish.id) * guests + "</p>";
+	    dishList += "</div>"; 
+	});
+	container.find("#dishes-side-view").html(dishList);
     }
-    
-
-
 }
