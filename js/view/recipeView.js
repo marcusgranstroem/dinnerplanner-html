@@ -16,8 +16,8 @@ var RecipeView = function(container, model) {
             htmlContent += "<p>" + dishes[i].description + "</p>"
             htmlContent += "</div>";
             htmlContent += "</div>";
-            container.append(htmlContent);
         }
+        container.append(htmlContent);
 
     }
 
