@@ -11,7 +11,7 @@ var DinnerModel = function() {
     var chosenDish;
 
     this.setNumberOfGuests = function(num) {
-        numberOfGuests.value = num;
+        numberOfGuests = num;
     }
 
     this.getNumberOfGuests = function() {

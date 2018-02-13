@@ -22,6 +22,8 @@ $(function() {
 
     //Initialize searchResults
     model.makeSearch(0,0);
+    //Initialize chosenDish
+    model.setChosenDish(1);
 
     // And create the instance of ResultView
     resultView = new ResultView(views.resultView, model);
