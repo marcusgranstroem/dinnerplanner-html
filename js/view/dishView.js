@@ -1,6 +1,6 @@
 var DishView = function (container, model) {
     var htmlContent;
-    
+
     // This needs a serious cleanup
     htmlContent += "<div id=\"dish-details\" class=\"result-view border-object\">";
     htmlContent += "<div id=\"dish-more\">";
@@ -8,7 +8,7 @@ var DishView = function (container, model) {
     htmlContent += "<h2>LASAGNE </h2>";
     htmlContent += "<img src=\"images/icecream.jpg\" alt=\"Lasagne\">";
     htmlContent += "<p>Some text here. That's a tasty looking lasagna right there. It looks a little cold though, but I can't really place my finger on why. </p>";
-    htmlContent += "<a href=\"main_page.html\" class=\"button button2 small-button\">back to search </a>";
+    htmlContent += "<button id=\"back-to-search\" class=\"button button2 small-button\">back to search </button>";
     htmlContent += "</div>";
     htmlContent += "<div id=\"ingredients-list\">";
     htmlContent += "<h2 class=\"text-margin-1\">INGREDIENTS FOR 3 PEOPLE </h2>";
@@ -35,7 +35,7 @@ var DishView = function (container, model) {
     htmlContent += "<hr>";
     htmlContent += "<div id=\"ingredients-total\">";
     htmlContent += "<a href=\"main_with_dish.html\">";
-    htmlContent += "<button class=\"button button2 small-button\">Add to menu";
+    htmlContent += "<button id=\"add-to-menu\"class=\"button button2 small-button\">Add to menu";
     htmlContent += "</button>";
     htmlContent += "</a>";
     htmlContent += "<p>SEK 77.20 </p>";

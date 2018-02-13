@@ -73,6 +73,7 @@ var DinnerModel = function() {
             return true;
         });
         menu.push(dishToAdd);
+        this.notifyObservers("added-dish-to-menu");
     }
 
     //Removes dish from menu
