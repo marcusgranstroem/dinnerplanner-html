@@ -27,4 +27,8 @@ var SearchView = function(container, model) {
         return container.find('#search-field').val();
     }
 
+    var uppercaseFirstLetter = function(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
 }
