@@ -7,6 +7,7 @@ var DinnerModel = function() {
     var numberOfGuests = 4;
     var observers = [];
     var menu = [];
+    var chosenDish;
 
     this.setNumberOfGuests = function(num) {
         numberOfGuests.value = num;
@@ -130,8 +131,9 @@ var DinnerModel = function() {
     }
 
     // Controller functions
-    this.sideBarCollapseButton = function() {
-
+    this.setChosenDish = function(dishID) {
+        chosenDish = this.getDish(dishID);
+        notifyObservers("dish_chosen");
     }
 
     // the dishes variable contains an array of all the
