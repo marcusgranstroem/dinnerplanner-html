@@ -16,7 +16,6 @@ var ResultViewController = function(generalController, view, model) {
         var id = node.id.substring(8); //remove the "dish-id-" part of id
         model.setChosenDish(id);
         generalController.showDish();
-        console.log(id);
     }
     dishBtn.addEventListener("click", dishClick, false);
 }

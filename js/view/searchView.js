@@ -11,8 +11,21 @@ var SearchView = function(container, model) {
     htmlContent += "<option value=\"dessert\">Dessert </option>";
     htmlContent += "<option value=\"appetizer\">Appetizer </option>";
     htmlContent += "</select>";
-    htmlContent += "<button class=\"button button2 small-button\">Search </button>";
+    htmlContent += "<button id=\"search-button\"class=\"button button2 small-button\">Search </button>";
     htmlContent += "</div>";
 
     container.append(htmlContent);
+
+    this.getSearchBtn = function() {
+        return container.find('#search-button').get(0);
+    }
+
+    this.getSelection = function() {
+        return container.find('#search-drop').find(":selected").val();
+    }
+
+    this.getSearchField = function() {
+        return container.find('#search-field').val();
+    }
+
 }

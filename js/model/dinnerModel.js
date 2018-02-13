@@ -7,6 +7,7 @@ var DinnerModel = function() {
     var numberOfGuests = 4;
     var observers = [];
     var menu = [];
+    var searchResults = [];
     var chosenDish;
 
     this.setNumberOfGuests = function(num) {
@@ -73,7 +74,7 @@ var DinnerModel = function() {
             return true;
         });
         menu.push(dishToAdd);
-        this.notifyObservers("added-dish-to-menu");
+        this.notifyObservers("added_dish_to_menu");
     }
 
     //Removes dish from menu
