@@ -7,6 +7,10 @@ var SideViewController = function(generalController, view, model) {
 
     var confirmBtn = view.getConfirmBtn();
     var confirm = function(evt) {
+        if (model.getFullMenu() == []) {
+            alert('Your menu is empty.');
+            return;
+        }
         generalController.showCheckout();
     }
     confirmBtn.addEventListener("click", confirm, false);
