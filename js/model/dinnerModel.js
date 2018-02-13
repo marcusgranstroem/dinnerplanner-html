@@ -134,7 +134,7 @@ var DinnerModel = function() {
     // Controller functions
     this.setChosenDish = function(dishID) {
         chosenDish = this.getDish(dishID);
-        notifyObservers("dish_chosen");
+        this.notifyObservers("dish_chosen");
     }
 
     this.getChosenDish = function() {
