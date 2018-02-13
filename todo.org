@@ -1,11 +1,11 @@
 * Lab2 [50%]
   DEADLINE: <2018-02-14 Wed>
-  1. [62%] implement dynamic views (add content)
+  1. [50%] implement dynamic views (add content)
      - [ ] CheckoutView
      - [X] ResultView
      - [ ] SearchView
        + [ ] Implelent search and filter
-     - [X] ReciepeView
+     - [ ] ReciepeView
      - [ ] SideView
        + [ ] Add dishes from menu
        + [ ] Change number of guests
@@ -15,17 +15,17 @@
   2. [X] Add observers to model
      * [X] this.addObserver
      * [X] notifyOobservers
-  3. [14%] this.upadate for all views
+  3. [28%] this.upadate for all views
      - [ ] Checkout
-     - [ ] Recipe (No listeners exist)
+     - [X] Recipe (No listeners exist)
      - [ ] Result
      - [X] Dish
      - [ ] Side
      - [ ] Search
      - [ ] SubBanner
-  4. [37%] controller for all views
+  4. [50%] controller for all views
      - [X] Checkout
-     - [ ] Recipe (No listeners exist)
+     - [X] Recipe (No listeners exist)
      - [X] Result
      - [ ] Dish
      - [ ] Side
