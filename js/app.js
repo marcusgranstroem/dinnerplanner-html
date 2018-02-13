@@ -32,9 +32,9 @@ $(function() {
     sideView = new SideView(views.sideView, model);
 
     searchView = new SearchView(views.searchView, model);
-    
+
     indexView = new IndexView(views.indexView, model);
-    
+
     //subBannerView = new IndexView(views.subBannerView, model);
 
 
@@ -45,7 +45,8 @@ $(function() {
     //var dishViewController = new DishViewController(this, dishView, model);
     var sideViewController = new SideViewController(this, sideView, model);
     //var searchViewController = new SearchViewController(this, searchView, model);
-    //var indexViewController = new IndexViewController(this, IndexView, model);
+    var indexViewController = new IndexViewController(this, indexView, model);
+
 
     /**
      * IMPORTANT: app.js is the only place where you are allowed to
