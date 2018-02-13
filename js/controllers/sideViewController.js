@@ -14,4 +14,23 @@ var SideViewController = function(generalController, view, model) {
         generalController.showCheckout();
     }
     confirmBtn.addEventListener("click", confirm, false);
+
+    var plusBtn = view.getPlusBtn();
+    var plus = function(evt) {
+        model.setNumberOfGuests(model.getNumberOfGuests() + 1);
+        model.notifyObservers("changed_number_of_guests");
+    }
+    plusBtn.addEventListener("click", plus, false);
+
+    var minusBtn = view.getMinusBtn();
+    var minus = function(evt) {
+        var wantToSetTo = model.getNumberOfGuests() - 1;
+        if(wantToSetTo < 1){
+            alert('Must be positive number of guests.');
+            return;
+        }
+        model.setNumberOfGuests(wantToSetTo);
+        model.notifyObservers("changed_number_of_guests");
+    }
+    minusBtn.addEventListener("click", minus, false);
 }

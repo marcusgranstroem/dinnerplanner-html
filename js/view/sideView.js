@@ -54,7 +54,7 @@ var SideView = function(container, model) {
 	var guests = model.getNumberOfGuests();
 
 	container.find("#people-text").html("People: " + guests);
-	//container.find("#total-cost").html("SEK " + totPrice);
+	container.find("#total-cost").html("SEK " + totPrice);
 	container.find("#total-cost2").html("SEK " + totPrice);
 
 	var dishList = "";
@@ -65,5 +65,13 @@ var SideView = function(container, model) {
 	    dishList += "</div>";
 	});
 	container.find("#dishes-side-view").html(dishList);
+    }
+
+    this.getPlusBtn = function() {
+        return container.find('#increment-guests-btn').get(0);
+    }
+
+    this.getMinusBtn = function() {
+        return container.find('#increment-guests-btn').get(0);
     }
 }
