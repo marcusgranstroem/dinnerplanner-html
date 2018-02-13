@@ -12,6 +12,12 @@
      * [X] notifyOobservers
   3. [ ] this.upadate for all views
   4. [ ] controller for all views
+     * [X] Checkout
+     * [ ] Recipe
+     * [X] Result
+     * [X] Dish
+     * [X] Side
+     * [ ] Search
   5. [ ] add plus/minus btn for numberOfGuests
 
 
