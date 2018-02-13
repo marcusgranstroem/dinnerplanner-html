@@ -2,7 +2,7 @@ var DishView = function (container, model) {
     var currentDish;
     var htmlContent = "";
 
-    
+
 
     // This needs a serious cleanup
     htmlContent += "<div id=\"dish-details\" class=\"result-view border-object\">";
@@ -52,11 +52,13 @@ var DishView = function (container, model) {
 	case "dish_chosen":
 	    currentDish = model.getChosenDish();
 	    updateHTML();
+    case "changed_number_of_guests":
+        updateHTML();
 	    break;
 	}
     }
     model.addObserver(update);
-    
+
     var updateHTML = function() {
 	var guests = model.getNumberOfGuests();
 	container.find("#dish-name").html(currentDish.name);
@@ -87,4 +89,3 @@ var DishView = function (container, model) {
 	container.find("#dish-prep").html(currentDish.description);
     }
 }
-
