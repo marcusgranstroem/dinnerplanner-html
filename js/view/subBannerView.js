@@ -3,7 +3,7 @@ var subBannerView = function(container, model) {
 
     htmlContent += "<div id=\"checkout-container\">";
     htmlContent += "<div class=\"sub-banner\">";
-    htmlContent += "<h2 id=\"sub-banner-title\">My Dinner:";
+    htmlContent += "<h2 id=\"sub-banner-title\">My Dinner: ";
     htmlContent += "<span id=\"numberOfGuests\">" + model.getNumberOfGuests();
     htmlContent += "</span> people";
     htmlContent += "</h2>";
