@@ -1,8 +1,6 @@
 var CheckoutView = function (container, model) {
 
     var htmlContent = "";
-    var totalPrice = 0;
-    var numberOfGuests = model.getNumberOfGuests();
 
     htmlContent += "<div id=\"checkout-menu\">";
     htmlContent += "<div id=\"checkout-items\">";
@@ -19,6 +17,8 @@ var CheckoutView = function (container, model) {
     var updateHTML = function() {
         container.find('#checkout-items').empty();
         var htmlContent = "";
+
+        var totalPrice = 0;
 
         // Generate content from model
         model.getFullMenu().forEach(function(dish) {
