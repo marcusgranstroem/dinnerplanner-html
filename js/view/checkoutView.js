@@ -16,28 +16,38 @@ var CheckoutView = function (container, model) {
 
     container.append(htmlContent);
 
-    htmlContent = "";
+    var updateHTML = function() {
+        container.find('#checkout-items').empty();
+        var htmlContent = "";
 
-    // Generate content from model
-    model.getFullMenu().forEach(function(dish) {
-	htmlContent += "<div class=\"checkout-object\">";
-	htmlContent += "<div class=\"dish-object\">";
-	htmlContent += "<img src=\"" + dish.image + "\">";
-	htmlContent += "<p class=\"dish-object-text\">" + dish.name +"</p>";
-	htmlContent += "</div>";
-	htmlContent += "<p id=\"dish-price-text\">" + model.getDishPrice(dish.id) + " SEK</p>";
-	htmlContent += "</div>";
-	totalPrice += model.getDishPrice(dish.id);
-    });
+        // Generate content from model
+        model.getFullMenu().forEach(function(dish) {
+    	htmlContent += "<div class=\"checkout-object\">";
+    	htmlContent += "<div class=\"dish-object\">";
+    	htmlContent += "<img src=\"" + dish.image + "\">";
+    	htmlContent += "<p class=\"dish-object-text\">" + dish.name +"</p>";
+    	htmlContent += "</div>";
+    	htmlContent += "<p id=\"dish-price-text\">" + model.getDishPrice(dish.id) + " SEK</p>";
+    	htmlContent += "</div>";
+    	totalPrice += model.getDishPrice(dish.id);
+        });
 
-    htmlContent += "<hr id=\"vertical-line\">";
-    htmlContent += "<div id=\"price-tag\"><p id=\"total-price-text\">Total: </p><p id=\"total-price-number\">" + totalPrice + " SEK</p></div>";
+        htmlContent += "<hr id=\"vertical-line\">";
+        htmlContent += "<div id=\"price-tag\"><p id=\"total-price-text\">Total: </p><p id=\"total-price-number\">" + totalPrice + " SEK</p></div>";
 
-    container.find("#checkout-items").append(htmlContent);
+        container.find("#checkout-items").append(htmlContent);
+    }
 
-    /*this.getBackAndEditBtn = function() {
-        return container.find('#back-and-edit').get(0);
-    }*/
+    var update = function(model, changeDetails) {
+        switch(changeDetails) {
+            case "added_dish_to_menu":
+                updateHTML();
+                break;
+            default:
+                break;
+        }
+    }
+    model.addObserver(update);
 
     this.getFullRecipeBtn = function() {
         return container.find('#print-full-recipe').get(0);

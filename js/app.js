@@ -16,9 +16,9 @@ $(function() {
     var model = new DinnerModel();
 
     // Just to show some data
-    model.addDishToMenu(1);
+    /*model.addDishToMenu(1);
     model.addDishToMenu(100);
-    model.addDishToMenu(200);
+    model.addDishToMenu(200);*/
 
     // And create the instance of ResultView
     resultView = new ResultView(views.resultView, model);
