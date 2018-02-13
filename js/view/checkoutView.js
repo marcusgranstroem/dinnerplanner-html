@@ -38,6 +38,8 @@ var CheckoutView = function (container, model) {
         container.find("#checkout-items").append(htmlContent);
     }
 
+    updateHTML();
+
     var update = function(model, changeDetails) {
         switch(changeDetails) {
             case "added_dish_to_menu":
