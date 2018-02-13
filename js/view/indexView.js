@@ -6,4 +6,7 @@ var IndexView = function(container, model) {
     htmlContent += "<button id=\"start-create-dinner-button\" class=\"button button2\">Create new dinner</button>";
 
     container.append(htmlContent);
+    this.getStartCreateDinnerBtn = function() {
+        return container.find('start-create-dinner-button').get(0);
+    }
 }
