@@ -40,7 +40,7 @@ $(function() {
 
     // Initiate our controllers
     var resultViewController = new ResultViewController(this, resultView, model);
-    //var recipeViewController = new RecipeViewController(this, recipeView, model);
+    var recipeViewController = new RecipeViewController(this, recipeView, model);
     var checkoutViewController = new CheckoutViewController(this, checkoutView, model);
     var dishViewController = new DishViewController(this, dishView, model);
     var sideViewController = new SideViewController(this, sideView, model);
