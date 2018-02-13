@@ -35,7 +35,7 @@ $(function() {
 
     indexView = new IndexView(views.indexView, model);
 
-    //subBannerView = new IndexView(views.subBannerView, model);
+    subBannerView = new subBannerView(views.subBannerView, model);
 
 
     // Initiate our controllers
@@ -46,6 +46,7 @@ $(function() {
     var sideViewController = new SideViewController(this, sideView, model);
     var searchViewController = new SearchViewController(this, searchView, model);
     var indexViewController = new IndexViewController(this, indexView, model);
+    var subBannerViewController = new SubBannerViewController(this, subBannerView, model);
 
 
     /**
@@ -74,6 +75,7 @@ $(function() {
     this.showCheckout = function() {
         hideAll();
         views.checkoutView.show();
+        views.subBannerView.show();
     }
 
     this.showDish = function() {
@@ -86,6 +88,7 @@ $(function() {
     this.showRecipe = function() {
         hideAll();
         views.recipeView.show();
+        views.subBannerView.show();
     }
 
     this.showIndex = function() {

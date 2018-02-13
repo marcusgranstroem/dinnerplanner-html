@@ -18,7 +18,7 @@ var SideView = function(container, model) {
     htmlContent += "<p class=\"dish-banner-text\">Cost </p>";
     htmlContent += "</div>";
     htmlContent += "<p id=\"total-cost\">SEK 0.00 </p>";
-    htmlContent += "<button id=\"confirm-button\" class=\"button button2 small-button\" disabled=\"true\">Confirm Dinner </button>";
+    htmlContent += "<button id=\"confirm-button\" class=\"button button2 small-button\">Confirm Dinner </button>";
     htmlContent += "</div>";
 
     this.getCollapseBtn = function() {
