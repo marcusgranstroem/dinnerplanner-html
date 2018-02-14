@@ -6,7 +6,6 @@ var SearchViewController = function(generalController, view, model) {
         if(selection == 'all')
             selection = 0;
         model.makeSearch(selection, filter);
-        model.notifyObservers("made_search");
     }
     searchBtn.addEventListener("click", search, false);
 }

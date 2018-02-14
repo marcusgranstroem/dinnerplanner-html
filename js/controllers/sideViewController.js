@@ -18,7 +18,6 @@ var SideViewController = function(generalController, view, model) {
     var plusBtn = view.getPlusBtn();
     var plus = function(evt) {
         model.setNumberOfGuests(model.getNumberOfGuests() + 1);
-        model.notifyObservers("changed_number_of_guests");
     }
     plusBtn.addEventListener("click", plus, false);
 
@@ -30,7 +29,6 @@ var SideViewController = function(generalController, view, model) {
             return;
         }
         model.setNumberOfGuests(wantToSetTo);
-        model.notifyObservers("changed_number_of_guests");
     }
     minusBtn.addEventListener("click", minus, false);
 }

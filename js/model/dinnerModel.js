@@ -12,6 +12,7 @@ var DinnerModel = function() {
 
     this.setNumberOfGuests = function(num) {
         numberOfGuests = num;
+        this.notifyObservers("changed_number_of_guests");
     }
 
     this.getNumberOfGuests = function() {
@@ -78,6 +79,7 @@ var DinnerModel = function() {
             return true;
         });
         menu.push(dishToAdd);
+        this.notifyObservers("added_dish_to_menu");
     }
 
     //Removes dish from menu
@@ -147,6 +149,7 @@ var DinnerModel = function() {
 
     this.makeSearch = function(type, filter) {
         searchResults = this.getAllDishes(type, filter);
+        this.notifyObservers("made_search");
     }
 
     this.getSearchedDishes = function() {
