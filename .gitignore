@@ -1,2 +1,5 @@
 #emacs tempfile
 *~
+
+#config file with api keys
+config.js
