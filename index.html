@@ -14,7 +14,30 @@
 	  </p>
 	  <button id="start-create-dinner-button" class="button button2">Create new dinner</button>
 	</div>
-      <div id="side-view" class="border-object"></div>
+	<div id="side-view" class="border-object">
+	 <div id="dinner-collapse" class="no-wrap">
+    <h2 class="text-margin-1">My dinner</h2>
+    <button id="collapse-button" class="button button2 small-button">Show</button>
+    </div>
+    <div id="people-input" class="no-wrap">
+    <p id="people-text" class="text-margin-1"></p>
+    <button id="increment-guests-btn" class="button button2 small-button">+</button>
+    <button id="decrement-guests-btn" class="button button2 small-button">-</button>
+    <p id="total-cost2">SEK 0</p>
+    </div>
+    <div id="menu-content">
+    <div class="dish-banner">
+    <p class="dish-banner-text">Dish name </p>
+    <p class="dish-banner-text">Cost </p>
+    </div>
+    <div id="dishes-side-view"></div>
+    <p id="total-cost">SEK 0 </p>
+    <button id="confirm-button" class="button button2 small-button">Confirm Dinner </button>
+    </div>
+
+
+
+	</div>
       <div class="main-view">
 	<div id="search-view" class="border-object"></div>
 	<div id="result-view" class="border-object result-view"></div>
