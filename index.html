@@ -6,59 +6,125 @@
   </head>
   <body>
     <div class="flex-container">
-      <div class="banner"> <h1>Dinner Planner</h1></div>
+      <div class="banner">
+	<h1>Dinner Planner
+	</h1>
+      </div>
       <div class="body-container">
 	<div id="welcome-view" class="inner-container">
 	  <p class="info-text">
 	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed dictum turpis. Praesent non justo vitae mauris posuere blandit vel id arcu. Aliquam semper quis augue vitae pharetra. Mauris imperdiet ex mattis justo eleifend pharetra.
 	  </p>
-	  <button id="start-create-dinner-button" class="button button2">Create new dinner</button>
+	  <button id="start-create-dinner-button" class="button button2">Create new dinner
+	  </button>
 	</div>
 	<div id="side-view" class="border-object">
 	 <div id="dinner-collapse" class="no-wrap">
-    <h2 class="text-margin-1">My dinner</h2>
-    <button id="collapse-button" class="button button2 small-button">Show</button>
+	   <h2 class="text-margin-1">My dinner
+	   </h2>
+	   <button id="collapse-button" class="button button2 small-button">Show
+	   </button>
     </div>
     <div id="people-input" class="no-wrap">
-    <p id="people-text" class="text-margin-1"></p>
-    <button id="increment-guests-btn" class="button button2 small-button">+</button>
-    <button id="decrement-guests-btn" class="button button2 small-button">-</button>
-    <p id="total-cost2">SEK 0</p>
+      <p id="people-text" class="text-margin-1">
+      </p>
+      <button id="increment-guests-btn" class="button button2 small-button">+
+      </button>
+      <button id="decrement-guests-btn" class="button button2 small-button">-
+      </button>
+      <p id="total-cost2">SEK 0
+      </p>
     </div>
     <div id="menu-content">
     <div class="dish-banner">
-    <p class="dish-banner-text">Dish name </p>
-    <p class="dish-banner-text">Cost </p>
+      <p class="dish-banner-text">Dish name
+      </p>
+      <p class="dish-banner-text">Cost
+      </p>
     </div>
-    <div id="dishes-side-view"></div>
-    <p id="total-cost">SEK 0 </p>
-    <button id="confirm-button" class="button button2 small-button">Confirm Dinner </button>
+    <div id="dishes-side-view">
     </div>
-
-
-
+    <p id="total-cost">SEK 0
+    </p>
+    <button id="confirm-button" class="button button2 small-button">Confirm Dinner
+    </button>
+    </div>
 	</div>
       <div class="main-view">
 	<div id="search-view" class="border-object">
 
-<h2 class="small-text">Find a dish </h2>
+	  <h2 class="small-text">Find a dish
+	  </h2>
 <div class="no-wrap">
 <input type="text" id="search-field" placeholder="Enter key words">
 <select id="search-drop">
-<option value="all">All</option>
-<option value="main dish">Main Course </option>
-<option value="dessert">Dessert </option>
-<option value="starter">Appetizer </option>
+  <option value="all">All
+  </option>
+  <option value="main dish">Main Course
+  </option>
+  <option value="dessert">Dessert
+  </option>
+  <option value="starter">Appetizer
+  </option>
 </select>
-<button id="search-button"class="button button2 small-button">Search </button>
+<button id="search-button"class="button button2 small-button">Search
+</button>
 </div>
 
 	</div>
-	<div id="result-view" class="border-object result-view"></div>
-	<div id="dish-view"></div>
-	<div id="sub-banner-view"></div>
-	<div id="checkout-view"></div>
-	<div id="recipe-view"></div>
+	<div id="result-view" class="border-object result-view">
+	</div>
+	<div id="dish-view">
+
+    <div id="dish-details" class="result-view border-object">
+    <div id="dish-more">
+    <div id="dish-description">
+      <h2 id="dish-name">
+      </h2>
+    <img id="dish-image">
+      <p id="dish-info">
+      </p>
+      <button id="back-to-search" class="button button2 small-button">Back to search
+      </button>
+    </div>
+    <div id="ingredients-list">
+      <h2 id="ingredients-header" class="text-margin-1">
+      </h2>
+    <hr>
+    <!--Add ingredients here-->
+    <div class="ingredient-box">
+      <div id="ingredient-column-amount">
+      </div>
+      <div id="ingredient-column-description">
+      </div>
+      <div id="ingredient-column-currency">
+      </div>
+      <div id="ingredient-column-price">
+      </div>
+    </div>
+    <hr>
+    <div id="ingredients-total">
+    <button id="add-to-menu"class="button button2 small-button">Add to menu
+    </button>
+    <p id="tot-price\">
+    </p>
+    </div>
+    </div>
+    </div>
+    <div id=\"dish-preperation">
+    <h2>PREPERATION
+    </h2>
+    <p id="dish-prep">
+    </p>
+    </div>
+
+	</div>
+	<div id="sub-banner-view">
+	</div>
+	<div id="checkout-view">
+	</div>
+	<div id="recipe-view">
+	</div>
       </div>
 
       </div>
@@ -66,27 +132,46 @@
   </body>
 
     <!-- Javascript files goes here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
     <!-- Views -->
-    <script src="js/model/dinnerModel.js"> </script>
-    <script src="js/view/resultView.js"> </script>
-    <script src="js/view/recipeView.js"> </script>
-    <script src="js/view/checkoutView.js"> </script>
-    <script src="js/view/dishView.js"> </script>
-    <script src="js/view/sideView.js"> </script>
-    <script src="js/view/searchView.js"> </script>
-    <script src="js/view/indexView.js"> </script>
-    <script src="js/view/subBannerView.js"> </script>
+    <script src="js/model/dinnerModel.js">
+    </script>
+    <script src="js/view/resultView.js">
+    </script>
+    <script src="js/view/recipeView.js">
+    </script>
+    <script src="js/view/checkoutView.js">
+    </script>
+    <script src="js/view/dishView.js">
+    </script>
+    <script src="js/view/sideView.js">
+    </script>
+    <script src="js/view/searchView.js">
+    </script>
+    <script src="js/view/indexView.js">
+    </script>
+    <script src="js/view/subBannerView.js">
+    </script>
     <!-- Controllers -->
-    <script src="js/controllers/resultViewController.js"> </script>
-    <script src="js/controllers/checkoutViewController.js"> </script>
-    <script src="js/controllers/dishViewController.js"> </script>
-    <script src="js/controllers/sideViewController.js"> </script>
-    <script src="js/controllers/recipeViewController.js"> </script>
-    <script src="js/controllers/searchViewController.js"> </script>
-    <script src="js/controllers/indexViewController.js"> </script>
-    <script src="js/controllers/subBannerViewController.js"> </script>
+    <script src="js/controllers/resultViewController.js">
+    </script>
+    <script src="js/controllers/checkoutViewController.js">
+    </script>
+    <script src="js/controllers/dishViewController.js">
+    </script>
+    <script src="js/controllers/sideViewController.js">
+    </script>
+    <script src="js/controllers/recipeViewController.js">
+    </script>
+    <script src="js/controllers/searchViewController.js">
+    </script>
+    <script src="js/controllers/indexViewController.js">
+    </script>
+    <script src="js/controllers/subBannerViewController.js">
+    </script>
 
     <!-- General state controller -->
-    <script src="js/app.js"></script>
+    <script src="js/app.js">
+    </script>
 </html>

@@ -1,43 +1,4 @@
 var DishView = function (container, model) {
-    var htmlContent = "";
-
-
-
-    // This needs a serious cleanup
-    htmlContent += "<div id=\"dish-details\" class=\"result-view border-object\">";
-    htmlContent += "<div id=\"dish-more\">";
-    htmlContent += "<div id=\"dish-description\">";
-    htmlContent += "<h2 id=\"dish-name\"></h2>";
-    htmlContent += "<img id=\"dish-image\">";
-    htmlContent += "<p id=\"dish-info\"></p>";
-    htmlContent += "<button id=\"back-to-search\" class=\"button button2 small-button\">Back to search </button>";
-    htmlContent += "</div>";
-    htmlContent += "<div id=\"ingredients-list\">";
-    htmlContent += "<h2 id=\"ingredients-header\" class=\"text-margin-1\"></h2>";
-    htmlContent += "<hr>";
-    htmlContent += "<!--Add ingredients here-->"; // Should be generated from model
-    htmlContent += "<div class=\"ingredient-box\">";
-    htmlContent += "<div id=\"ingredient-column-amount\"></div>";
-    htmlContent += "<div id=\"ingredient-column-description\"></div>";
-    htmlContent += "<div id=\"ingredient-column-currency\"></div>";
-    htmlContent += "<div id=\"ingredient-column-price\"></div>";
-    htmlContent += "</div>";
-    htmlContent += "<hr>";
-    htmlContent += "<div id=\"ingredients-total\">";
-    htmlContent += "<button id=\"add-to-menu\"class=\"button button2 small-button\">Add to menu";
-    htmlContent += "</button>";
-    htmlContent += "<p id=\"tot-price\"></p>";
-    htmlContent += "</div>";
-    htmlContent += "</div>";
-    htmlContent += "</div>";
-    htmlContent += "<div id=\"dish-preperation\">";
-    htmlContent += "<h2>PREPERATION";
-    htmlContent += "</h2>";
-    htmlContent += "<p id=\"dish-prep\"></p>";
-    htmlContent += "</div>";
-
-    container.append(htmlContent);
-
     this.getAddToMenuBtn = function() {
         return container.find('#add-to-menu').get(0);
     }
