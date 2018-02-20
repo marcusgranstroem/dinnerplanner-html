@@ -99,7 +99,7 @@ var DinnerModel = function() {
 	$.ajax( {
 	    url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search',
 	    headers: {
-		'X-Mashape-Key': 'Qu9grxVNWpmshA4Kl9pTwyiJxVGUp1lKzrZjsnghQMkFkfA4LB'
+		'X-Mashape-Key': ''
 		
 	    }
 	}
