@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
   </head>
   <body>
     <div class="flex-container">
@@ -50,6 +51,9 @@
     </button>
     </div>
 	</div>
+	<script>
+	  $("#side-view").hide();
+	</script>
 	<div class="main-view">
 	  <div id="search-view" class="border-object">
 
@@ -72,6 +76,10 @@
 	  </div>
 
 	</div>
+	  <script>
+	    $("#search-view").hide();
+	  </script>
+
 	<div id="result-view" class="border-object result-view">
 	</div>
 	<div id="dish-view">
@@ -119,6 +127,9 @@
 	    </div>
 	  </div>
       </div>
+	<script>
+	  $("#dish-view").hide();
+	</script>
 	  <div id="sub-banner-view">
 	  </div>
 	  <div id="checkout-view">
@@ -131,6 +142,10 @@
           <button id="print-full-recipe" class="button button2">Print Full Recipe</button>
           </div>
 	  </div>
+	  <script>
+	    $("#checkout-view").hide();
+	  </script>
+
 	  <div id="recipe-view">
 	  </div>
 	</div>
@@ -140,8 +155,6 @@
   </body>
 
     <!-- Javascript files goes here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
     <!-- Views -->
     <script src="js/model/dinnerModel.js">
     </script>
