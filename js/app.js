@@ -1,6 +1,9 @@
 $(function() {
     var resultView, recipeView, checkoutView, dishView, sideView, searchView;
 
+    //We instantiate our model
+    var model = new DinnerModel();
+
     var views = {
         "resultView": $("#result-view"),
         "recipeView": $("#recipe-view"),
@@ -12,8 +15,6 @@ $(function() {
         "subBannerView": $("#sub-banner-view")
     }
 
-    //We instantiate our model
-    var model = new DinnerModel();
 
     // Just to show some data
     /*model.addDishToMenu(1);

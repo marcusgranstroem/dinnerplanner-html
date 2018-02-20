@@ -95,10 +95,22 @@ var DinnerModel = function() {
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
     //you can use the filter argument to filter out the dish by name or ingredient (use for search)
     //if you don't pass any filter all the dishes will be returned
-    this.getAllDishes = function(type, filter) {
+    this.getAllDishes = function(type, filter, callback, errorCallback) {
+	if(!type) {
+	    type = "";
+	}
+	else {
+	    type = "type=" + type;
+	}
+	if(!filter) {
+	    filter = "";
+	}
+	else {
+	    filter = "query=" + filter;
+	}
        $.ajax( {
-            type: "GET"
-            url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search",
+           method: "GET",
+           url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?" + type + "&" + filter,
             headers: {
                 "X-Mashape-Key":
             },
@@ -108,8 +120,8 @@ var DinnerModel = function() {
             error: function(error) {
                 errorCallback(error);
             }
-
-        });
+	//        });
+	return;
     }
 
     //function that returns a dish of specific ID
@@ -148,7 +160,14 @@ var DinnerModel = function() {
     }
 
     this.makeSearch = function(type, filter) {
-        searchResults = this.getAllDishes(type, filter);
+	var callback = function(data) {
+	    searchResults = data;
+	}
+	// TODO should tell user something better
+	var errorCallback = function(error) {
+	    console.log(error);
+	}
+        this.getAllDishes(type, filter);
         this.notifyObservers("made_search");
     }
 
