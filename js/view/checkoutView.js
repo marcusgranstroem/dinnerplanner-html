@@ -1,25 +1,10 @@
 var CheckoutView = function (container, model) {
-
-    var htmlContent = "";
-
-    htmlContent += "<div id=\"checkout-menu\">";
-    htmlContent += "<div id=\"checkout-items\">";
-    htmlContent += "</div>";
-    htmlContent += "</div>";
-    htmlContent += "<hr id=\"checkout-line\">";
-    htmlContent += "</div>";
-    htmlContent += "<div>";
-    htmlContent += "<button id=\"print-full-recipe\" class=\"button button2\">Print Full Recipe</button>";
-    htmlContent += "</div>";
-    
-    container.append(htmlContent);
-    
     var updateHTML = function() {
         container.find('#checkout-items').empty();
         var htmlContent = "";
-	
+
         var totalPrice = 0;
-	
+
         // Generate content from model
         model.getFullMenu().forEach(function(dish) {
     	    htmlContent += "<div class=\"checkout-object\">";
@@ -31,10 +16,10 @@ var CheckoutView = function (container, model) {
     	    htmlContent += "</div>";
     	    totalPrice += model.getDishPrice(dish.id);
         });
-	
+
         htmlContent += "<hr id=\"vertical-line\">";
         htmlContent += "<div id=\"price-tag\"><p id=\"total-price-text\">Total: </p><p id=\"total-price-number\">" + totalPrice + " SEK</p></div>";
-	
+
         container.find("#checkout-items").append(htmlContent);
     }
 

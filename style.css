@@ -84,6 +84,7 @@ body, html {
 
 #side-view {
     display: flex;
+
     flex-direction: column;
     align-items: flex-start;
     flex-basis: 256px;
@@ -157,9 +158,9 @@ body, html {
 
 #search-view {
     display: flex;
+
     flex-direction: column;
     height: 128px;
-    display: flex;
     align-items: flex-start;
     justify-content: flex-start;
 }
@@ -200,6 +201,10 @@ body, html {
   margin: 16px;
 }
 
+#checkout-view {
+
+}
+
 #checkout-items {
   display: flex;
   align-items: center;
@@ -216,6 +221,10 @@ body, html {
 #vertical-line {
   width: 1px;
   height: 80%;
+}
+
+#recipe-view {
+
 }
 
 #dish-preperation {
@@ -244,6 +253,10 @@ body, html {
 #sub-banner-title {
   margin: 16px;
   margin-left: 32px;
+}
+
+#sub-banner-view {
+
 }
 
 #dish-more {
@@ -276,6 +289,7 @@ body, html {
 }
 
 #dish-view {
+
     overflow-y: auto;
 }
 
@@ -355,6 +369,7 @@ p {
 }
 #result-view {
     display: flex;
+
     flex-wrap: wrap;
     align-items: flex-start;
     overflow-y: auto;
@@ -439,11 +454,11 @@ p {
     .body-container {
 	flex-direction: column;
     }
-    
+
     .info-text {
 	font-size: 22px;
     }
-    
+
     .button {
 	font-size: 100%;
 	white-space: nowrap;
@@ -456,7 +471,7 @@ p {
     .recipe {
 	display: flex;
 	flex-direction: column;
-	
+
     }
 
     .button {
@@ -477,6 +492,7 @@ p {
     }
 
     #result-view {
+    display: none;
 	justify-content: center;
     }
 
@@ -487,4 +503,3 @@ p {
     #checkout-items {
 	flex-direction: column;
     }
-
