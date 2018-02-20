@@ -1,6 +1,4 @@
 var SideView = function(container, model) {
-
-     
     var content = "People: " + model.getNumberOfGuests();
     container.find("#people-text").html(content);
 
@@ -16,7 +14,6 @@ var SideView = function(container, model) {
     this.getConfirmBtn = function() {
         return container.find('#confirm-button').get(0);
     }
-
 
     var update = function(model, changeDetails) {
 	switch(changeDetails) {
