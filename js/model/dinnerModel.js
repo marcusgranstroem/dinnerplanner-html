@@ -9,6 +9,7 @@ var DinnerModel = function() {
     var menu = [];
     var searchResults = [];
     var chosenDish;
+    var mykey = config.API_KEY_SPOONACULAR;
 
     this.setNumberOfGuests = function(num) {
         numberOfGuests = num;
@@ -95,21 +96,15 @@ var DinnerModel = function() {
     //you can use the filter argument to filter out the dish by name or ingredient (use for search)
     //if you don't pass any filter all the dishes will be returned
     this.getAllDishes = function(type, filter) {
-        return dishes.filter(function(dish) {
-            var found = true;
-            if (filter) {
-                found = false;
-                dish.ingredients.forEach(function(ingredient) {
-                    if (ingredient.name.indexOf(filter) != -1) {
-                        found = true;
-                    }
-                });
-                if (dish.name.indexOf(filter) != -1) {
-                    found = true;
-                }
-            }
-            return (type == 0 || dish.type == type) && found;
-        });
+	$.ajax( {
+	    url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search',
+	    headers: {
+		'X-Mashape-Key': 'Qu9grxVNWpmshA4Kl9pTwyiJxVGUp1lKzrZjsnghQMkFkfA4LB'
+		
+	    }
+	}
+	    
+	) 
     }
 
     //function that returns a dish of specific ID
