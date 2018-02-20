@@ -1,6 +1,5 @@
 //Returns //DinnerModel Object constructor
 var DinnerModel = function() {
-
     //TODO Lab 1 implement the data structure that will hold number of guest
     // and selected dishes for the dinner menu
     //var numberOfGuests = document.getElementById("people-input-field");
@@ -112,16 +111,23 @@ var DinnerModel = function() {
            method: "GET",
            url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?" + type + "&" + filter,
             headers: {
-                "X-Mashape-Key":
+                "X-Mashape-Key": mykey
             },
+	   beforeSend: function() {
+	       $("#loader").show();
+	   },
+	   complete: function() {
+	       $("#loader").hide();
+	   },
             success: function(data) {
+		console.log("Successful API connection");
                 callback(data);
             },
             error: function(error) {
+		console.log("Error API");
                 errorCallback(error);
             }
-	//        });
-	return;
+	});
     }
 
     //function that returns a dish of specific ID
@@ -161,14 +167,15 @@ var DinnerModel = function() {
 
     this.makeSearch = function(type, filter) {
 	var callback = function(data) {
-	    searchResults = data;
-	}
+	    searchResults = data.results;
+	    console.log(searchResults);
+            this.notifyObservers("made_search");
+	}.bind(this)
 	// TODO should tell user something better
 	var errorCallback = function(error) {
 	    console.log(error);
 	}
-        this.getAllDishes(type, filter);
-        this.notifyObservers("made_search");
+        this.getAllDishes(type, filter, callback, errorCallback);
     }
 
     this.getSearchedDishes = function() {
