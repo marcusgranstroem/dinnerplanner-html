@@ -20,12 +20,11 @@ var DishView = function (container, model) {
     var update = function(model, changeDetails) {
 	switch(changeDetails) {
 	case "dish_chosen":
-        displayLoader();
-	    //updateHTML();
+            displayLoader();
 	    break;
 	case "changed_number_of_guests":
             updateHTML();
-    case "loading_done":
+	case "loading2_done":
             updateHTML();
             hideLoader();
 	    break;
@@ -34,6 +33,7 @@ var DishView = function (container, model) {
     model.addObserver(update);
 
     var updateHTML = function() {
+	container.find("#dish-image").empty(); // Remove old picture because the new loads slow
 	var currentDish = model.getChosenDish();
 	var guests = model.getNumberOfGuests();
 	container.find("#dish-name").html(currentDish.name);

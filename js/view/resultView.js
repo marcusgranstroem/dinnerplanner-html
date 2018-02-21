@@ -17,7 +17,7 @@ var ResultView = function (container, model) {
 
     var update = function(model, changeDetails) {
         switch(changeDetails) {
-        case "made_search":
+	case "loading1_done":
             updateHTML();
             break;
         default:

@@ -282,6 +282,7 @@ body, html {
     border-right: 0px;
     background-color: khaki;
     padding: 16px;
+    align-self: center;
 }
 
 #ingredients-total {

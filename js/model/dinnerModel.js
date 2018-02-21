@@ -102,23 +102,17 @@ var DinnerModel = function() {
             headers: {
                 "X-Mashape-Key": mykey
             },
-	   beforeSend: function() {
-	       $("#loader").show();
-	   },
-	   complete: function() {
-	       $("#loader").hide();
-	   },
-            success: function(data) {
-		console.log("Successful API connection");
-                callback(data);
-            },
-            error: function(error) {
-		console.log("Error API");
-                errorCallback(error);
-            }
-	});
+           success: function(data) {
+	       console.log("Successful API connection");
+               callback(data);
+           },
+           error: function(error) {
+	       console.log("Error API");
+               errorCallback(error);
+           }
+       });
     }
-
+    
     //function that returns a dish of specific ID
     this.getDish = function(id, callback, errorCallback) {
        $.ajax( {
@@ -158,16 +152,13 @@ var DinnerModel = function() {
     this.setChosenDish = function(node) {
         var id = node.id.substring(8); //remove the "dish-id-" part of id
 	var name = node.lastChild.innerHTML;
-	// TODO GET INFO FROM API
-    this.notifyObservers('dish_chosen');
+	this.notifyObservers('dish_chosen');
 	var callback = function(data) {
 	    data.id = id;
 	    data.name = name;
 	    console.log(data);
 	    chosenDish = data;
-        //this.notifyObservers("dish_chosen");
-        this.notifyObservers('loading_done');
-
+            this.notifyObservers('loading2_done');
 	}.bind(this)
 	var errorCallback = function(error) {
 	    console.log(error);
@@ -180,9 +171,10 @@ var DinnerModel = function() {
     }
 
     this.makeSearch = function(type, filter) {
+	this.notifyObservers("made_search");
 	var callback = function(data) {
 	    searchResults = data.results;
-            this.notifyObservers("made_search");
+            this.notifyObservers("loading1_done");
 	}.bind(this)
 	// TODO should tell user something better
 	var errorCallback = function(error) {
