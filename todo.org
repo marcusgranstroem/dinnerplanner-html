@@ -36,11 +36,11 @@
 
 
 * Lab3 [0%]
-** Get data [50%]
+** Get data [75%]
    - [X] Update getAllDishes and getDish
    - [ ] Asynchronous callbacks instead of returns. Callback on success, else error.
    - [X] modify code where we call getAllDishses and getDish to work with new callbacks
-   - [ ] get more objects than the first 10 from search
+   - [X] get more objects than the first 10 from search
 
 ** Good interaction [33%]
  - [X] Display loading indicator when gathering data from api
