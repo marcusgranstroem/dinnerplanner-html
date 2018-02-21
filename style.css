@@ -125,12 +125,6 @@ body, html {
     margin-left: 16px;
 }
 
-.res-image {
-    height: 140px;
-    width: 140px;
-    object-fit: cover;
-}
-
 .dish-banner {
     display: flex;
     justify-content: space-between;
@@ -454,14 +448,14 @@ p {
 }
 
 #loader {
-  border: 16px solid grey;
+  border: 8px solid grey;
   border-radius: 50%;
   align-self: center;
-  border-top: 16px solid orange;
-  width: auto;
-  height: auto;
+  border-top: 8px solid orange;
+  width: 10px;
+  height: 10px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
+  animation: spin 0.8s linear infinite;
 }
 
 /* Safari */
