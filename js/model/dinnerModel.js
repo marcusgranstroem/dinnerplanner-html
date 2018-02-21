@@ -159,12 +159,15 @@ var DinnerModel = function() {
         var id = node.id.substring(8); //remove the "dish-id-" part of id
 	var name = node.lastChild.innerHTML;
 	// TODO GET INFO FROM API
+    this.notifyObservers('dish_chosen');
 	var callback = function(data) {
 	    data.id = id;
 	    data.name = name;
 	    console.log(data);
 	    chosenDish = data;
-            this.notifyObservers("dish_chosen");
+        //this.notifyObservers("dish_chosen");
+        this.notifyObservers('loading_done');
+
 	}.bind(this)
 	var errorCallback = function(error) {
 	    console.log(error);

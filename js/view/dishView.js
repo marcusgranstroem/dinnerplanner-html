@@ -7,13 +7,27 @@ var DishView = function (container, model) {
         return container.find('#back-to-search').get(0);
     }
 
+    var displayLoader = function() {
+        container.children().hide();
+        container.find('#loader2').show();
+    }
+
+    var hideLoader = function()  {
+        container.children().show();
+        container.find('#loader2').hide();
+    }
+
     var update = function(model, changeDetails) {
 	switch(changeDetails) {
 	case "dish_chosen":
-	    updateHTML();
+        displayLoader();
+	    //updateHTML();
 	    break;
 	case "changed_number_of_guests":
             updateHTML();
+    case "loading_done":
+            updateHTML();
+            hideLoader();
 	    break;
 	}
     }
@@ -50,8 +64,4 @@ var DishView = function (container, model) {
 	container.find("#dish-prep").html(currentDish.instructions);
     }
 
-    this.displayLoader = function() {
-	container.empty();
-	var html = "div id=\"loader2\"></div>";
-    }
 }

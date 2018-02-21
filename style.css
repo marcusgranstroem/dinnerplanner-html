@@ -473,6 +473,10 @@ p {
   border-top: 24px solid orange;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 1.5s linear infinite;
+  margin: auto;
+  margin-top: 60px;
+  width: 160px;
+  height: 160px;
 }
 
 /* Safari */
