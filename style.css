@@ -458,8 +458,8 @@ p {
   border-radius: 50%;
   align-self: center;
   border-top: 16px solid orange;
-  width: 120px;
-  height: 120px;
+  width: auto;
+  height: auto;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
