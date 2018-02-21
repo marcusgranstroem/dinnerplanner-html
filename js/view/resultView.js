@@ -6,15 +6,15 @@ var ResultView = function (container, model) {
 	for (var i = 0; i < dishes.length; i++) {
 	    console.log(dishes[i].id);
 	    results += "<div class=\"dish-object\" id=\"dish-id-" + dishes[i].id + "\">";
-	    results += "<img src=\"https://spoonacular.com/recipeImages/" + dishes[i].id + "-240x150.jpg\">";
+	    results += "<img class=\"res-image\" src=\"https://spoonacular.com/recipeImages/" + dishes[i].id + "-240x150.jpg\">";
 	    results += "<p class=\"dish-object-text\">" + dishes[i].title +"</p>";
 	    results += "</div>";
 	}
 	container.append(results);
     }
-    
+
     updateHTML();
-    
+
     var update = function(model, changeDetails) {
         switch(changeDetails) {
         case "made_search":
@@ -25,8 +25,8 @@ var ResultView = function (container, model) {
         }
     }
     model.addObserver(update);
-    
-    
+
+
     this.getDishBtn = function() {
 	return container.get(0);
     }

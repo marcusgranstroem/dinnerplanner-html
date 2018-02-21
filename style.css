@@ -125,6 +125,12 @@ body, html {
     margin-left: 16px;
 }
 
+.res-image {
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+}
+
 .dish-banner {
     display: flex;
     justify-content: space-between;

@@ -169,7 +169,7 @@ var DinnerModel = function() {
 	var callback = function(data) {
 	    searchResults = data.results;
 	    console.log(searchResults);
-            this.notifyObservers("made_search");
+        this.notifyObservers("made_search");
 	}.bind(this)
 	// TODO should tell user something better
 	var errorCallback = function(error) {
