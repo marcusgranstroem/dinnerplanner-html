@@ -374,6 +374,13 @@ p {
     align-items: flex-start;
     overflow-y: auto;
 }
+
+.res-image {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
 .dish-object {
     border-style: solid;
     width: 140px;
