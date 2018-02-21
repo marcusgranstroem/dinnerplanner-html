@@ -9,6 +9,7 @@ var DinnerModel = function() {
     var searchResults = [];
     var chosenDish;
     var mykey = config.API_KEY_SPOONACULAR;
+    var searchState = {type: 0, filter: 0, offset: 0}; //This is not how it should be done
 
     this.setNumberOfGuests = function(num) {
         numberOfGuests = num;
@@ -98,7 +99,7 @@ var DinnerModel = function() {
 	}
        $.ajax( {
            method: "GET",
-           url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?" + type + "&" + filter,
+           url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?" + type + "&" + filter + "&offset="+ searchState.offset,
             headers: {
                 "X-Mashape-Key": mykey
             },
@@ -156,7 +157,6 @@ var DinnerModel = function() {
 	var callback = function(data) {
 	    data.id = id;
 	    data.name = name;
-	    console.log(data);
 	    chosenDish = data;
             this.notifyObservers('loading2_done');
 	}.bind(this)
@@ -171,6 +171,9 @@ var DinnerModel = function() {
     }
 
     this.makeSearch = function(type, filter) {
+	searchState.type = type;
+	searchState.filter = filter;
+	searchState.offset = 0;
 	this.notifyObservers("made_search");
 	var callback = function(data) {
 	    searchResults = data.results;
@@ -181,6 +184,20 @@ var DinnerModel = function() {
 	    console.log(error);
 	}
         this.getAllDishes(type, filter, callback, errorCallback);
+    }
+
+    this.showMoreDishes = function() {
+	searchState.offset = searchState.offset + 10;
+	this.notifyObservers("made_search");
+	var callback = function(data) {
+	    searchResults = searchResults.concat(data.results);
+            this.notifyObservers("loading1_done");
+	}.bind(this)
+	// TODO should tell user something better
+	var errorCallback = function(error) {
+	    console.log(error);
+	}
+        this.getAllDishes(searchState.type, searchState.filter, callback, errorCallback);
     }
 
     this.getSearchedDishes = function() {

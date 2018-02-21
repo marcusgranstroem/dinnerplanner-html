@@ -1,6 +1,7 @@
 var ResultView = function (container, model) {
     var updateHTML = function() {
-	container.empty();
+	var innerContainer = container.find("#inner-result-view");
+	innerContainer.empty();
 	var results = "";
 	var dishes = model.getSearchedDishes(); //(0,0) to have no filters or types.
 	for (var i = 0; i < dishes.length; i++) {
@@ -10,7 +11,7 @@ var ResultView = function (container, model) {
 	    results += "<p class=\"dish-object-text\">" + dishes[i].title +"</p>";
 	    results += "</div>";
 	}
-	container.append(results);
+	innerContainer.append(results);
     }
 
     updateHTML();
@@ -29,6 +30,10 @@ var ResultView = function (container, model) {
 
     this.getDishBtn = function() {
 	return container.get(0);
+    }
+
+    this.getMoreBtn = function() {
+	return container.find("#more-button").get(0);
     }
 
 }

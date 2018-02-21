@@ -372,11 +372,12 @@ p {
     cursor: not-allowed;
 }
 
-#result-view {
+#inner-result-view {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     overflow-y: auto;
+    border-bottom: none;
 }
 
 .res-image {
@@ -458,6 +459,10 @@ p {
     width: 100%;
 }
 
+#more-button {
+    align-self: center;
+}
+
 #loader {
   border: 8px solid grey;
   border-radius: 50%;
@@ -535,8 +540,7 @@ p {
 	display: initial;
     }
 
-    #result-view {
-    display: none;
+    #inner-result-view {
 	justify-content: center;
     }
 
