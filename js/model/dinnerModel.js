@@ -45,11 +45,12 @@ var DinnerModel = function() {
     }
 
     this.getDishPrice = function(id) {
-        var ingredientList = this.getDish(id).ingredients;
-        var price = 0;
-        for (var i = 0; i < ingredientList.length; i++) {
-            price +=ingredientList[i].price;
-        }
+	var price = 0;
+	menu.forEach(function(dish) {
+	    if(id == dish.id) {
+		price = dish.pricePerServing;
+	    }
+	});
         return price * this.getNumberOfGuests();
     }
 
@@ -57,28 +58,16 @@ var DinnerModel = function() {
     this.getTotalMenuPrice = function() {
         var totalPrice = 0;
         var numberOfGuests = this.getNumberOfGuests();
-        this.getAllIngredients().forEach(function(ingredient) {
-            totalPrice += ingredient.price * numberOfGuests;
+        menu.forEach(function(dish) {
+            totalPrice +=dish.pricePerServing * numberOfGuests;
         });
         return totalPrice;
     }
 
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
-    this.addDishToMenu = function(id) {
-        var dishToAdd;
-        for (var i = 0; i < dishes.length; i++) {
-            if (dishes[i].id == id) {
-                dishToAdd = dishes[i];
-            }
-        }
-
-        menu = menu.filter(function(dish) {
-            if (dishToAdd.type == dish.type)
-                return false;
-            return true;
-        });
-        menu.push(dishToAdd);
+    this.addDishToMenu = function() {
+        menu.push(chosenDish);
         this.notifyObservers("added_dish_to_menu");
     }
 
@@ -131,12 +120,22 @@ var DinnerModel = function() {
     }
 
     //function that returns a dish of specific ID
-    this.getDish = function(id) {
-        for (key in dishes) {
-            if (dishes[key].id == id) {
-                return dishes[key];
+    this.getDish = function(id, callback, errorCallback) {
+       $.ajax( {
+           method: "GET",
+           url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+ id +"/information",
+            headers: {
+                "X-Mashape-Key": mykey
+            },
+            success: function(data) {
+		console.log("Successful API connection");
+                callback(data);
+            },
+            error: function(error) {
+		console.log("Error API");
+                errorCallback(error);
             }
-        }
+	});
     }
 
     this.addObserver = function(observer) {
@@ -156,9 +155,21 @@ var DinnerModel = function() {
     }
 
     // Controller functions
-    this.setChosenDish = function(dishID) {
-        chosenDish = this.getDish(dishID);
-        this.notifyObservers("dish_chosen");
+    this.setChosenDish = function(node) {
+        var id = node.id.substring(8); //remove the "dish-id-" part of id
+	var name = node.lastChild.innerHTML;
+	// TODO GET INFO FROM API
+	var callback = function(data) {
+	    data.id = id;
+	    data.name = name;
+	    console.log(data);
+	    chosenDish = data;
+            this.notifyObservers("dish_chosen");
+	}.bind(this)
+	var errorCallback = function(error) {
+	    console.log(error);
+	}
+        chosenDish = this.getDish(id, callback, errorCallback);
     }
 
     this.getChosenDish = function() {
@@ -168,8 +179,7 @@ var DinnerModel = function() {
     this.makeSearch = function(type, filter) {
 	var callback = function(data) {
 	    searchResults = data.results;
-	    console.log(searchResults);
-        this.notifyObservers("made_search");
+            this.notifyObservers("made_search");
 	}.bind(this)
 	// TODO should tell user something better
 	var errorCallback = function(error) {

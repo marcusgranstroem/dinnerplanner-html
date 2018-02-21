@@ -9,7 +9,7 @@ var CheckoutView = function (container, model) {
         model.getFullMenu().forEach(function(dish) {
     	    htmlContent += "<div class=\"checkout-object\">";
     	    htmlContent += "<div class=\"dish-object\">";
-    	    htmlContent += "<img src=\"" + dish.image + "\">";
+    	    htmlContent += "<img class=\"res-image\" src=\"" + dish.image + "\">";
     	    htmlContent += "<p class=\"dish-object-text\">" + dish.name +"</p>";
     	    htmlContent += "</div>";
     	    htmlContent += "<p id=\"dish-price-text\">" + model.getDishPrice(dish.id) + " SEK</p>";

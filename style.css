@@ -207,6 +207,7 @@ body, html {
 
 #checkout-items {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -228,7 +229,9 @@ body, html {
 }
 
 #dish-preperation {
-  text-align: center;
+  text-align: left;
+  margin: 10px;
+  width: 80%;
 }
 
 #total-price-text {
@@ -367,9 +370,9 @@ p {
     opacity: 0.6;
     cursor: not-allowed;
 }
+
 #result-view {
     display: flex;
-
     flex-wrap: wrap;
     align-items: flex-start;
     overflow-y: auto;
@@ -463,6 +466,15 @@ p {
   animation: spin 0.8s linear infinite;
 }
 
+#loader2 {
+  border: 24px solid grey;
+  border-radius: 50%;
+  align-self: center;
+  border-top: 24px solid orange;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 1.5s linear infinite;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -529,4 +541,8 @@ p {
 
     #checkout-items {
 	flex-direction: column;
+    }
+    #dish-image {
+	width: 280px;
+	height: auto;
     }

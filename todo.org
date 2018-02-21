@@ -36,13 +36,15 @@
 
 
 * Lab3 [0%]
-** Get data [0%]
-   - [ ] Update getAllDishes and getDish
+** Get data [66%]
+   - [X] Update getAllDishes and getDish
    - [ ] Asynchronous callbacks instead of returns. Callback on success, else error.
-   - [ ] modify code where we call getAllDishses and getDish to work with new callbacks
+   - [X] modify code where we call getAllDishses and getDish to work with new callbacks
 
-** Good interaction [0%]
+** Good interaction [16%]
  - [ ] Inform user about errors in data retrieval
  - [ ] Display loading indicator when gathering data from api
  - [ ] When error occur, display message
- - [ ] Remove limit of 3 dishes (starterm, main, dessert)
+ - [X] Remove limit of 3 dishes (starterm, main, dessert)
+ - [ ] Fix css on checkoutview
+ - [ ] Add function for remove dishes

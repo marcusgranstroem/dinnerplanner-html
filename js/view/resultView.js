@@ -30,4 +30,5 @@ var ResultView = function (container, model) {
     this.getDishBtn = function() {
 	return container.get(0);
     }
+
 }

@@ -1,7 +1,7 @@
 var DishViewController = function(generalController, view, model) {
     var addToMenuBtn = view.getAddToMenuBtn();
     var addToMenu = function(evt) {
-        model.addDishToMenu(model.getChosenDish().id);
+        model.addDishToMenu();
         generalController.showMainPage();
     }
     addToMenuBtn.addEventListener("click", addToMenu, false);

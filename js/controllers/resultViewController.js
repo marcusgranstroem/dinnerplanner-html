@@ -13,8 +13,9 @@ var ResultViewController = function(generalController, view, model) {
             }
         if (!res)
             return;
-        var id = node.id.substring(8); //remove the "dish-id-" part of id
-        model.setChosenDish(id);
+        //var id = node.id.substring(8); //remove the "dish-id-" part of id
+	view.displayLoader();
+        model.setChosenDish(node);
         generalController.showDish();
     }
     dishBtn.addEventListener("click", dishClick, false);
