@@ -16,6 +16,6 @@ What's in the project
 Implementation requires a file named config.js with folowing content:
 ```javascript
 var config = {
-  API_KEY_SPOONACLUAR : <YOUR KEY GOES HERE>;
+  API_KEY_SPOONACULAR : '<YOUR KEY GOES HERE>'
 }
 ```
