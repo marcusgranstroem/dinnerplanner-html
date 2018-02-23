@@ -17,7 +17,6 @@ var CheckoutView = function (container, model) {
     	    totalPrice += model.getDishPrice(dish.id);
         });
 
-        htmlContent += "<hr id=\"vertical-line\">";
         htmlContent += "<div id=\"price-tag\"><p id=\"total-price-text\">Total: </p><p id=\"total-price-number\">" + totalPrice + " SEK</p></div>";
 
         container.find("#checkout-items").append(htmlContent);
