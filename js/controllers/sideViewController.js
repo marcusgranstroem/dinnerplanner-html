@@ -31,4 +31,24 @@ var SideViewController = function(generalController, view, model) {
         model.setNumberOfGuests(wantToSetTo);
     }
     minusBtn.addEventListener("click", minus, false);
+
+    var removeBtn = view.getRemoveBtn();
+    var removeClick = function(evt) {
+        if(evt.target.id != 'remove-dish')
+            return;
+        var res = false;
+        var node = evt.target.parentNode;
+        while (node != null) {
+            if (node.className == "dish-in-menu") {
+                res = true;
+                break;
+            }
+            node = node.parentNode;
+        }
+        if (!res)
+            return;
+        var id = node.id.substring(8); //remove the "dish-id-" part of id
+        model.removeDishFromMenu(id);
+    }
+    removeBtn.addEventListener("click", removeClick, false);
 }

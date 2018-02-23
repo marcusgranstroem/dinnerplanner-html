@@ -144,6 +144,10 @@ body, html {
     padding: 8px;
 }
 
+#dishes-side-view {
+    overflow-y: scroll;
+}
+
 .dish-in-menu {
   display: flex;
   justify-content: space-between;
@@ -151,9 +155,16 @@ body, html {
   background-color: lightgrey;
   border-style: solid;
   border-width: 2px;
-  width: 95%;
+  width: 90%;
   align-self: center;
   padding: 2px;
+}
+
+#remove-dish {
+    padding: 8px 8px;
+    font-size: 12px;
+    margin-top: 2px;
+    margin-left: 8px;
 }
 
 #search-view {

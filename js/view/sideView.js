@@ -16,14 +16,17 @@ var SideView = function(container, model) {
     }
 
     var update = function(model, changeDetails) {
-	switch(changeDetails) {
-	case "added_dish_to_menu":
-	    updateHTML();
-	    break;
-    case "changed_number_of_guests":
-        updateHTML();
-        break;
-	}
+    	switch(changeDetails) {
+    	case "added_dish_to_menu":
+    	    updateHTML();
+    	    break;
+        case "changed_number_of_guests":
+            updateHTML();
+            break;
+        case "removed_dish_from_menu":
+            updateHTML();
+            break;
+    	}
     }
     model.addObserver(update);
 
@@ -38,9 +41,10 @@ var SideView = function(container, model) {
 
 	var dishList = "";
 	menu.forEach(function(dish) {
-	    dishList += "<div class =\"dish-in-menu\">";
+	    dishList += "<div id=\"dish-id-" + dish.id + "\" class =\"dish-in-menu\">";
 	    dishList += "<p>" + dish.name + "</p>";
 	    dishList += "<p>" + model.getDishPrice(dish.id) + "</p>";
+        dishList += "<button id=\"remove-dish\" class=\"button button2\">X</button>";
 	    dishList += "</div>";
 	});
 	container.find("#dishes-side-view").html(dishList);
@@ -52,5 +56,9 @@ var SideView = function(container, model) {
 
     this.getMinusBtn = function() {
         return container.find('#decrement-guests-btn').get(0);
+    }
+
+    this.getRemoveBtn = function() {
+        return container.find('#dishes-side-view').get(0);
     }
 }

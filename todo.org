@@ -46,5 +46,5 @@
  - [X] Display loading indicator when gathering data from api
  - [X] Remove limit of 3 dishes (starterm, main, dessert)
  - [X] Fix css on checkoutview
- - [ ] Add function for remove dishes
- - [ ] Fix css on sideview (many dishes makes sidebar a sad boy)
+ - [X] Add function for remove dishes
+ - [X] Fix css on sideview (many dishes makes sidebar a sad boy)
