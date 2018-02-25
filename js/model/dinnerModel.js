@@ -79,6 +79,7 @@ var DinnerModel = function() {
                 return false;
             return true;
         });
+        this.notifyObservers("removed_dish_from_menu");
     }
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -113,7 +114,7 @@ var DinnerModel = function() {
            }
        });
     }
-    
+
     //function that returns a dish of specific ID
     this.getDish = function(id, callback, errorCallback) {
        $.ajax( {

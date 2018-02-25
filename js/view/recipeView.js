@@ -28,6 +28,9 @@ var RecipeView = function(container, model) {
             case "added_dish_to_menu":
                 updateHTML();
                 break;
+            case "removed_dish_from_menu":
+                updateHTML();
+                break;
             default:
                 break;
         }
