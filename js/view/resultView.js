@@ -16,10 +16,20 @@ var ResultView = function (container, model) {
 
     updateHTML();
 
+    var displayError = function() {
+	var innerContainer = container.find("#inner-result-view");
+	innerContainer.empty();
+	var results = "<p id=\"error-text\">An error occurred, please try again.";
+	innerContainer.append(results);
+    }
+    
     var update = function(model, changeDetails) {
         switch(changeDetails) {
 	case "loading1_done":
             updateHTML();
+            break;
+	case "api_error1":
+            displayError();
             break;
         default:
             break;

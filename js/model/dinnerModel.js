@@ -162,6 +162,7 @@ var DinnerModel = function() {
 	}.bind(this)
 	var errorCallback = function(error) {
 	    console.log(error);
+	    this.notifyObservers('api_error2');
 	}
         chosenDish = this.getDish(id, callback, errorCallback);
     }
@@ -182,6 +183,7 @@ var DinnerModel = function() {
 	// TODO should tell user something better
 	var errorCallback = function(error) {
 	    console.log(error);
+	    this.notifyObservers('api_error1')
 	}
         this.getAllDishes(type, filter, callback, errorCallback);
     }
