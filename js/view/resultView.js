@@ -5,7 +5,6 @@ var ResultView = function (container, model) {
 	var results = "";
 	var dishes = model.getSearchedDishes(); //(0,0) to have no filters or types.
 	for (var i = 0; i < dishes.length; i++) {
-	    console.log(dishes[i].id);
 	    results += "<div class=\"dish-object\" id=\"dish-id-" + dishes[i].id + "\">";
 	    results += "<img class=\"res-image\" src=\"https://spoonacular.com/recipeImages/" + dishes[i].id + "-240x150.jpg\">";
 	    results += "<p class=\"dish-object-text\">" + dishes[i].title +"</p>";

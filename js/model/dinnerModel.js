@@ -105,11 +105,10 @@ var DinnerModel = function() {
                 "X-Mashape-Key": mykey
             },
            success: function(data) {
-	       console.log("Successful API connection");
                callback(data);
            },
            error: function(error) {
-	       console.log("Error API");
+	       console.log(error);
                errorCallback(error);
            },
 	   complete: function() {
@@ -128,11 +127,10 @@ var DinnerModel = function() {
                 "X-Mashape-Key": mykey
             },
             success: function(data) {
-		console.log("Successful API connection");
                 callback(data);
             },
             error: function(error) {
-		console.log("Error API");
+		console.log(error);
                 errorCallback(error);
             },
 	   complete: function() {
