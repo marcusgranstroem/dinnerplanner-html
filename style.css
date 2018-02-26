@@ -502,6 +502,13 @@ p {
   100% { transform: rotate(360deg); }
 }
 
+#error-text {
+    margin: 6px;
+    font-size: 24px;
+    color: red;
+    align-self: left;
+}
+
 @media (max-width: 500px) {
     body {
 	height: 100%;

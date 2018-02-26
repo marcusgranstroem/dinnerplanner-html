@@ -42,6 +42,8 @@ var DishView = function (container, model) {
 
     var displayError = function() {
 	container.find("#error-text").html("An error has occurred, please try again.");
+	container.find("#dish-image").removeAttr("src");
+	container.find("#dish-image").removeAttr("alt");
 	container.find("#dish-image").empty(); // Remove old picture because the new loads slow
 	container.find("#dish-name").empty();
 	container.find("#dish-image").empty();
