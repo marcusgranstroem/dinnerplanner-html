@@ -25,7 +25,7 @@ var ResultView = function (container, model) {
     
     var update = function(model, changeDetails) {
         switch(changeDetails) {
-	case "loading1_done":
+	case "loading1_succesful":
             updateHTML();
             break;
 	case "api_error1":

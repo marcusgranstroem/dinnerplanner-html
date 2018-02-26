@@ -85,7 +85,7 @@ var DinnerModel = function() {
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
     //you can use the filter argument to filter out the dish by name or ingredient (use for search)
     //if you don't pass any filter all the dishes will be returned
-    this.getAllDishes = function(type, filter, callback, errorCallback) {
+    this.getAllDishes = function(type, filter, callback, errorCallback, completeCallback) {
 	if(!type) {
 	    type = "";
 	}
@@ -111,12 +111,16 @@ var DinnerModel = function() {
            error: function(error) {
 	       console.log("Error API");
                errorCallback(error);
-           }
+           },
+	   complete: function() {
+	       completeCallback();
+	   },
+	   timeout: 3000
        });
     }
 
     //function that returns a dish of specific ID
-    this.getDish = function(id, callback, errorCallback) {
+    this.getDish = function(id, callback, errorCallback, completeCallback) {
        $.ajax( {
            method: "GET",
            url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+ id +"/information",
@@ -130,7 +134,11 @@ var DinnerModel = function() {
             error: function(error) {
 		console.log("Error API");
                 errorCallback(error);
-            }
+            },
+	   complete: function() {
+	       completeCallback();
+	   },
+	   timeout: 3000
 	});
     }
 
@@ -159,13 +167,16 @@ var DinnerModel = function() {
 	    data.id = id;
 	    data.name = name;
 	    chosenDish = data;
-            this.notifyObservers('loading2_done');
+            this.notifyObservers('loading2_succesful');
 	}.bind(this)
 	var errorCallback = function(error) {
 	    console.log(error);
 	    this.notifyObservers('api_error2');
-	}
-        chosenDish = this.getDish(id, callback, errorCallback);
+	}.bind(this)
+	var completeCallback = function() {
+            this.notifyObservers('loading_done');
+	}.bind(this)
+        chosenDish = this.getDish(id, callback, errorCallback, completeCallback);
     }
 
     this.getChosenDish = function() {
@@ -179,14 +190,17 @@ var DinnerModel = function() {
 	this.notifyObservers("made_search");
 	var callback = function(data) {
 	    searchResults = data.results;
-            this.notifyObservers("loading1_done");
+            this.notifyObservers("loading1_succesful");
 	}.bind(this)
 	// TODO should tell user something better
 	var errorCallback = function(error) {
 	    console.log(error);
 	    this.notifyObservers('api_error1')
-	}
-        this.getAllDishes(type, filter, callback, errorCallback);
+	}.bind(this)
+	var completeCallback = function() {
+            this.notifyObservers('loading_done');
+	}.bind(this)
+        this.getAllDishes(type, filter, callback, errorCallback, completeCallback);
     }
 
     this.showMoreDishes = function() {
@@ -194,13 +208,17 @@ var DinnerModel = function() {
 	this.notifyObservers("made_search");
 	var callback = function(data) {
 	    searchResults = searchResults.concat(data.results);
-            this.notifyObservers("loading1_done");
+            this.notifyObservers("loading1_succesful");
 	}.bind(this)
 	// TODO should tell user something better
 	var errorCallback = function(error) {
 	    console.log(error);
-	}
-        this.getAllDishes(searchState.type, searchState.filter, callback, errorCallback);
+	    this.notifyObservers('api_error1')
+	}.bind(this)
+	var completeCallback = function() {
+            this.notifyObservers('loading_done');
+	}.bind(this)
+        this.getAllDishes(searchState.type, searchState.filter, callback, errorCallback, completeCallback);
     }
 
     this.getSearchedDishes = function() {

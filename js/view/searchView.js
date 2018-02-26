@@ -13,7 +13,7 @@ var SearchView = function(container, model) {
 
     var update = function(model, changeDetails) {
 	switch(changeDetails) {
-	case "loading1_done":
+	case "loading_done":
 	    hideLoader();
 	    break;
 	case "made_search":

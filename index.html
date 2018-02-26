@@ -3,7 +3,8 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      </script>
   </head>
   <body>
     <div class="flex-container">
@@ -62,18 +63,30 @@
 	  <div class="no-wrap">
 	    <input type="text" id="search-field" placeholder="Enter key words">
     <select id="search-drop">
-    <option value="all">All </option>
-    <option value="main course">Main Course</option>
-    <option value="side dish">Side Dish</option>
-    <option value="dessert">Dessert</option>
-    <option value="appetizer">Appetizer</option>
-    <option value="salad">Salad</option>
-    <option value="bread">Bread</option>
-    <option value="breakfast">Breakfast</option>
-    <option value="soup">Soup</option>
-    <option value="beverage">Beverage</option>
-    <option value="sauce">Sauce</option>
-    <option value="drink">Drink</option>
+      <option value="all">All
+      </option>
+      <option value="main course">Main Course
+      </option>
+      <option value="side dish">Side Dish
+      </option>
+      <option value="dessert">Dessert
+      </option>
+      <option value="appetizer">Appetizer
+      </option>
+      <option value="salad">Salad
+      </option>
+      <option value="bread">Bread
+      </option>
+      <option value="breakfast">Breakfast
+      </option>
+      <option value="soup">Soup
+      </option>
+      <option value="beverage">Beverage
+      </option>
+      <option value="sauce">Sauce
+      </option>
+      <option value="drink">Drink
+      </option>
 
 
 
@@ -81,8 +94,10 @@
   </select>
   <button id="search-button"class="button button2 small-button">Search
 </button>
-<div id="loader"></div>
-<script>$("#loader").hide();</script>
+  <div id="loader">
+  </div>
+  <script>$("#loader").hide();
+  </script>
 
 	  </div>
 
@@ -95,10 +110,12 @@
 	<div id="result-view" class="border-object result-view">
 	  <div id="inner-result-view" class="border-object result-view">
 	</div>
-	<button id="more-button"class="button button2 small-button">More</button>
+	  <button id="more-button"class="button button2 small-button">More
+	  </button>
 	</div>
 	<div id="dish-view">
-    <div id="loader2"></div>
+	  <div id="loader2"></div>
+	  <p id="error-text"></p>
 	  <div id="dish-details" class="result-view border-object">
 	    <div id="dish-more">
 	      <div id="dish-description">
@@ -154,7 +171,8 @@
           </div>
           <hr id="checkout-line">
           <div>
-          <button id="print-full-recipe" class="button button2">Print Full Recipe</button>
+            <button id="print-full-recipe" class="button button2">Print Full Recipe
+	    </button>
           </div>
 	  </div>
 	  <script>
@@ -171,7 +189,8 @@
 
     <!-- Javascript files goes here -->
     <!-- Config -->
-    <script src="config.js"></script>
+    <script src="config.js">
+    </script>
     <!-- Model -->
     <script src="js/model/dinnerModel.js">
     </script>

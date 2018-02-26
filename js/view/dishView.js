@@ -24,15 +24,38 @@ var DishView = function (container, model) {
 	    break;
 	case "changed_number_of_guests":
             updateHTML();
-	case "loading2_done":
+	    break;
+	case "loading2_succesful":
             updateHTML();
+	    break;
+	case "api_error2":
+	    displayError();
+	    break;
+	case "loading_done":
             hideLoader();
+	    break;
+	default:
 	    break;
 	}
     }
     model.addObserver(update);
 
+    var displayError = function() {
+	container.find("#error-text").html("An error has occurred, please try again.");
+	container.find("#dish-image").empty(); // Remove old picture because the new loads slow
+	container.find("#dish-name").empty();
+	container.find("#dish-image").empty();
+	container.find("#dish-info").empty();
+
+	container.find("#ingredients-header").empty();
+	container.find("#ingredient-column-amount").empty();
+	container.find("#ingredient-column-description").empty();
+	container.find("#tot-price").empty();
+	container.find("#dish-prep").empty();
+    }
+
     var updateHTML = function() {
+	container.find("#error-text").empty();
 	container.find("#dish-image").empty(); // Remove old picture because the new loads slow
 	var currentDish = model.getChosenDish();
 	var guests = model.getNumberOfGuests();
@@ -48,18 +71,12 @@ var DishView = function (container, model) {
 	var price = "";
 	var totalPrice = 0;
 	currentDish.extendedIngredients.forEach(function(ingredient) {
-	    // var ingredientPrice = ingredient.price * guests;
 	    amount += "<p class=\"ingredient-text1\">" + (ingredient.amount * guests) + " " + ingredient.unit + "</p>";
 	    descr += "<p class=\"ingredient-text2\">" + ingredient.name + "</p>";
-	    // currency += "<p class=\"ingredient-text3\">" + "SEK" + "</p>";
-	    // price += "<p class=\"ingredient-text4\">" + ingredientPrice + "</p>";
-	    //  totalPrice += ingredientPrice;
 	});
 
 	container.find("#ingredient-column-amount").html(amount);
 	container.find("#ingredient-column-description").html(descr);
-	//container.find("#ingredient-column-currency").html(currency);
-	//container.find("#ingredient-column-price").html(price);
 	container.find("#tot-price").html(currentDish.pricePerServing * guests + " SEK");
 	container.find("#dish-prep").html(currentDish.instructions);
     }
